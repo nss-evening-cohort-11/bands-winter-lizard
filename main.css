@@ -2,3 +2,15 @@ body {
     background-color: black;
     color: white;
 }
+
+
+/* SUBSCRIPTION FORM */
+
+#subscription {
+    width: 320px !important;
+}
+
+
+#exampleInputEmail1 {
+    margin-right: 10px;
+}
