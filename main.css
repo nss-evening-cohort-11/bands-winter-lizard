@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    color: white;
 }
 
 img {
@@ -12,8 +13,6 @@ img {
 
 #myCarousel {
   width: 1100px;
-  justify
-    color: white;
 }
 
 
@@ -22,7 +21,6 @@ img {
 form#subcription {
     height: 42px;
 }
-
 
 #exampleInputEmail1 {
     margin-right: 10px;
