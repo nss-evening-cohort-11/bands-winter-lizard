@@ -29,3 +29,18 @@ form#subcription {
 #exampleInputEmail1 {
     margin-right: 10px;
 }
+
+#newsInfoCards {
+  background-color: #8FDC97;
+  margin: 25px;
+}
+
+#newsImg {
+  width: 30%;
+  height: 28%;
+  margin-right: 25px;
+}
+
+#newsHead {
+  margin-top: 50px;
+}
