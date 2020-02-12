@@ -6,8 +6,8 @@ body {
 
 /* SUBSCRIPTION FORM */
 
-#subscription {
-    width: 320px !important;
+form#subcription {
+    height: 42px;
 }
 
 
