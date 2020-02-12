@@ -13,4 +13,17 @@ img {
 #myCarousel {
   width: 1100px;
   justify
+    color: white;
+}
+
+
+/* SUBSCRIPTION FORM */
+
+form#subcription {
+    height: 42px;
+}
+
+
+#exampleInputEmail1 {
+    margin-right: 10px;
 }
