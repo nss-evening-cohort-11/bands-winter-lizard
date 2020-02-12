@@ -1,44 +1,44 @@
-const newsArr = [
+const newsArrInfo = [
     {
-    date: '01/01/2020',
+    date: '06/23/2013',
     imageUrl: "something.jpg",
     description: "lorem ipsum"
     },
     {
-    date: '01/01/2020',
+    date: '01/15/2013',
     imageUrl: "something.jpg",
     description: "lorem ipsum"
     },
     {
-    date: '01/01/2020',
+    date: '08/10/2012',
     imageUrl: "something.jpg",
     description: "lorem ipsum"
     },
     {
-    date: '01/01/2020',
+    date: '03/01/2012',
     imageUrl: "something.jpg",
     description: "lorem ipsum"
     } 
 ]
 
 
-const makeNewsCards = (newsArr) => {
-    let domString = ""
-    for (let i = 0; i < newsArr.length; i++) {
+const printToDom = (divId, textToPrint) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+}
+
+const makeNewsCards = () => {
+    let domString = "";
+    for (let i = 0; i < newsArrInfo.length; i++) {
         domString += `<div class="card">`;
         domString +=   `<div class="card-body">`;
-        domString +=      `<img src="${newsArr[i].imageUrl}"`;
-        domString +=      `<h3>${newsArr[i].date}</h3>`;
-        domString +=      `<h4>${newsArr[i].description}</h4>`;
+        domString +=      `<img src="${newsArrInfo[i].imageUrl}"`;
+        domString +=      `<h3>${newsArrInfo[i].date}</h3>`;
+        domString +=      `<h4>${newsArrInfo[i].description}</h4>`;
         domString +=   `</div>`;
         domString += `</div>`;
     }
     printToDom("newsCards", domString);
-}
-
-const printToDom = (divId, textToPrint) => {
-    const selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = textToPrint;
 }
 
 // SUBSCRIPTION FORM FUNCTION
