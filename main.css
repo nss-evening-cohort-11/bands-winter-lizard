@@ -1,3 +1,14 @@
 body {
     background-color: black;
 }
+
+img {
+  max-width: 900px;
+  max-height: 800px;
+  width: auto;
+  height: auto;
+}
+
+.carousel-item {
+  justify-content: center;
+}
