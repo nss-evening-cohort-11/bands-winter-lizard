@@ -3,13 +3,28 @@ body {
     color: white;
 }
 
+img {
+  height: 300px;
+}
+
+.carousel-item {
+  justify-content: center;
+}
+
+#myCarousel {
+  width: 500px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.509);
+  padding: 5px;
+}
 
 /* SUBSCRIPTION FORM */
 
 form#subcription {
     height: 42px;
 }
-
 
 #exampleInputEmail1 {
     margin-right: 10px;
