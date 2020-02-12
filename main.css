@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+
+/* SUBSCRIPTION FORM */
+
+form#subcription {
+    height: 42px;
+}
+
+
+#exampleInputEmail1 {
+    margin-right: 10px;
+}
