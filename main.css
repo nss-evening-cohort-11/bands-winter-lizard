@@ -3,6 +3,12 @@ body {
     color: white;
 }
 
+.logo {
+  width: 75px;
+  height: 75px;
+  margin: 0px;
+}
+
 img {
   height: 300px;
 }
@@ -28,4 +34,18 @@ form#subcription {
 
 #exampleInputEmail1 {
     margin-right: 10px;
+}
+
+/* ALBUMS */
+.album-card {
+  color: black;
+  background-color: #0052cc;
+  margin: 10px 20px;
+  padding: 5px;
+
+}
+
+.album-art {
+  width: 200px;
+  height: 200px;
 }
