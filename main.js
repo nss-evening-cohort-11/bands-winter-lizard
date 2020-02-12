@@ -2,7 +2,7 @@ const newsArrInfo = [
     {
     date: '06/23/2013',
     imageUrl: "something.jpg",
-    description: "lorem ipsum"
+    description: "New album coming out on  07/04/2013!! We hope to have you join us at "
     },
     {
     date: '01/15/2013',
