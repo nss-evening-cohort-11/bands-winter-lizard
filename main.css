@@ -29,3 +29,13 @@ form#subcription {
 #exampleInputEmail1 {
     margin-right: 10px;
 }
+
+.tour-card {
+  display: flex;
+  margin: 8px;
+  background-color: rgb(49, 47, 47);
+}
+
+.card-header {
+  background-color: darkgray;
+}

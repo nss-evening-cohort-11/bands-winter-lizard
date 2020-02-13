@@ -36,20 +36,28 @@ tourDates = [{
     }
 ]
 
+const printToDom = (divId, textToPrint) => {
+    let selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+};
 
-const makeTourCards = (tourDates,divId) => {
+const makeTourCards = () => {
     let Domstring = '';
 for(let i = 0; i < tourDates.length; i++) {
-    Domstring =+ '<div class="tour-container">';
-    Domstring =+ `<h5 class="card-header">Featured</h5>`;
-    Domstring =+  <div class="card-body">
-    Domstring =+  <h5 class="card-title">Special title treatment</h5>
-    Domstring =+  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    Domstring =+  </div>
-    Domstring =+  </div>
-}
+    Domstring += `<div class="tour-card">`;
+    Domstring += `<h5 class="card-header">${tourDates[i].date}</h5>`;
+    Domstring +=  '<div class="card-body">';
+    Domstring +=  `<h5 class="card-title">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
+    Domstring +=  `<p class="card-text">${tourDates[i].venue}</p>`;
+    Domstring +=  '</div>';
+    Domstring +=  '</div>';
 
 }
+printToDom('tour-cards',Domstring);
+
+}
+
+
 
 
 
@@ -76,7 +84,8 @@ const events = () => {
 
 // INITIAL FUNCTION
 const init = () => {
-    events();
+    //events();
+    makeTourCards();
 };
 
 init();
