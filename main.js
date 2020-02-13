@@ -48,6 +48,73 @@ const makeNewsCards = () => {
     printToDom("newsCards", domString);
 }
 
+// MERCH CARDS
+const merchItems = [
+{
+imageUrl: "image.jpg",
+item: "t-shirt",
+price: "$15"
+},
+{
+imageUrl: "image.jpg",
+item: "t-shirt",
+price: "$15"
+},
+{
+imageUrl: "image.jpg",
+item: "t-shirt",
+price: "$15"
+},
+{
+imageUrl: "image.jpg",
+item: "t-shirt",
+price: "$15"
+},    
+{
+imageUrl: "image.jpg",
+item: "t-shirt",
+price: "$15"
+},
+{
+imageUrl: "image.jpg",
+item: "t-shirt",
+price: "$15"
+},
+{
+imageUrl: "image.jpg",
+item: "t-shirt",
+price: "$15"
+},
+{
+imageUrl: "image.jpg",
+item: "t-shirt",
+price: "$15"
+},
+{
+imageUrl: "image.jpg",
+item: "t-shirt",
+price: "$15"
+}
+]
+
+const makeMerchCards = () => {
+    let domString = "";
+    for (let i = 0; i < merchItems.length; i++){
+        domString += `<div class="card col-md-6 col-lg-4 card-separation" style="width: 18rem;">`;
+        domString += `<img src="${merchItems[i].imageUrl}" class="card-img-top" alt="...">`;
+        domString += `<div class="card-body">`
+        domString += `<h5 class="card-title">${merchItems[i].item}</h5>`
+        domString += `<p class="card-text"></p>`
+        domString += `<p class="card-text">${merchItems[i].price}</p>`
+        domString += `<button class="btn btn-secondary">BUY NOW</button>`
+        domString += `</div>`
+        domString += `</div>`
+    }
+    printToDom("merchItemsCards", domString);
+}
+
+makeMerchCards();
+
 // SUBSCRIPTION FORM FUNCTION
 const emailConfirm = () => {
     const textInput = document.getElementById('exampleInputEmail1')
