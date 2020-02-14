@@ -212,7 +212,7 @@ const init = () => {
             console.log('music');
             break;  
         case 'http://localhost:8080/tour.html':
-            console.log('tour');
+            makeTourCards();
             break;             
     }
 };
