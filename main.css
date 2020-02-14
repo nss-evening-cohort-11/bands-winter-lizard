@@ -49,6 +49,16 @@ form#subcription {
   width: 200px;
   height: 200px;
 }
+
+  .tour-card {
+  display: flex;
+  margin: 8px;
+}
+
+.tour-card-header {
+  background-color: darkgray;
+
+}
 /* NEWS CARDS */
 
 #newsInfoCards {
