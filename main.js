@@ -1,3 +1,63 @@
+//Arrays//
+tourDates = [{
+    date: "02/28/2020",
+    city: "Sacramento",
+    state: "CA",
+    venue: "The Dungeon"},
+
+    {date: "03/01/2020",
+    city: "San Francisco",
+    state: "CA",
+    venue: "The Devils Playground",
+    },
+
+    {date: "03/03/2020",
+    city: "San Diego",
+    state: "CA",
+    venue: "The Labyrinth",
+    },
+
+    {date: "03/05/2020",
+    city: "Los Angeles",
+    state: "CA",
+    venue: "Skid Row",
+    },
+
+    {date: "03/05/2020",
+    city: "Las Vegas",
+    state: "NV",
+    venue: "Sin City",
+    },
+
+    {date: "03/09/2020",
+    city: "Reno",
+    state: "NV",
+    venue: "The Bunny Ranch",
+    }
+]
+
+
+const makeTourCards = () => {
+    let Domstring = '';
+for(let i = 0; i < tourDates.length; i++) {
+    Domstring += `<div class="tour-card">`;
+    Domstring += `<h5 class="tour-card-header d-flex align-items-center  card-header">${tourDates[i].date}</h5>`;
+    Domstring +=  '<div class="card-body bg-dark">';
+    Domstring +=  `<h5 class="card-title">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
+    Domstring +=  `<p class="card-text">${tourDates[i].venue}</p>`;
+    Domstring +=  '</div>';
+    Domstring +=  '</div>';
+
+}
+printToDom('tour-cards',Domstring);
+
+}
+
+
+
+
+
+
 // NEWS ARRAY
 const newsArrInfo = [
     {
@@ -121,6 +181,12 @@ const emailConfirm = () => {
     }
 };
 
+// EVENTS
+const events = () => {
+    document.getElementById('emailButton').addEventListener('click', emailConfirm )
+};
+
+    
 // INITIAL FUNCTION
 const init = () => {
 
@@ -140,7 +206,7 @@ const init = () => {
             console.log('music');
             break;  
         case 'http://localhost:8080/tour.html':
-            console.log('tour');
+            makeTourCards();
             break;             
     }
 };
