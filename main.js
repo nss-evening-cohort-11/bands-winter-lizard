@@ -180,12 +180,6 @@ const emailConfirm = () => {
         alert('Enter valid email address')
     }
 };
-
-// EVENTS
-const events = () => {
-    document.getElementById('emailButton').addEventListener('click', emailConfirm )
-};
-
     
 // INITIAL FUNCTION
 const init = () => {
