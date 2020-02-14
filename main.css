@@ -10,6 +10,9 @@ body {
 }
 
 img {
+/* PHOTO CAROUSEL */
+
+.carousel-inner img {
   height: 300px;
 }
 
@@ -48,6 +51,8 @@ form#subcription {
 .album-art {
   width: 200px;
   height: 200px;
+/* NEWS CARDS */
+
 #newsInfoCards {
   background-color: #8FDC97;
   margin: 25px;
@@ -61,4 +66,9 @@ form#subcription {
 
 #newsHead {
   margin-top: 50px;
+}
+
+/* MEMBER BIOS CARDS */
+.bio-container {
+    margin-bottom: 30px;
 }
