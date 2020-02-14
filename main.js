@@ -103,76 +103,94 @@ const makeBioCards = () => {
         domString += '   </div>' 
         domString += '</div>'
     }
-    printToDom('bio-container', domString)
+    printToDom('bio-container', domString);
 };
 
 
 // MERCH CARDS
 const merchItems = [
 {
-imageUrl: "image.jpg",
-item: "t-shirt",
-price: "$15"
+imageUrl: "https://m.media-amazon.com/images/I/61cph-9AgVL._AC_UL320_.jpg",
+item: "T-shirt",
+price: "$15",
+description: "Yellow Winter-Lizard"
 },
 {
-imageUrl: "image.jpg",
-item: "t-shirt",
-price: "$15"
+imageUrl: "https://images.cloudpuble.com/thumb/1010x1010/129.front/White.0/8f6407fde9be360d44b64969e3fb9744/a7/2019/02/21/MXPP-5c6f500fd9218.png",
+item: "Coffee Cup",
+price: "$10",
+description: "Stay warm during the winter with your favorite hot beverage in the cup!"
 },
 {
-imageUrl: "image.jpg",
-item: "t-shirt",
-price: "$15"
+imageUrl: "https://ih0.redbubble.net/image.320352350.2352/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.jpg",
+item: "Sticker",
+price: "$5",
+description: "Black Winter-Lizard Sticker"
 },
 {
-imageUrl: "image.jpg",
-item: "t-shirt",
-price: "$15"
+imageUrl: "https://cdn.designbyhumans.com/product_images/p/53940.f56.9c492S7ay1Cm2MjUAAA-650x650-b-p.jpg",
+item: "Sticker",
+price: "$5",
+description: "Green Winter-Lizard Sticker"
 },    
 {
-imageUrl: "image.jpg",
-item: "t-shirt",
-price: "$15"
+imageUrl: "https://i.ebayimg.com/images/g/BN4AAOSw1CBbr~Rh/s-l640.jpg",
+item: "Lizard Coat",
+price: "$15",
+description: "Keep your lizard cozy this winter!"
 },
 {
-imageUrl: "image.jpg",
-item: "t-shirt",
-price: "$15"
+imageUrl: "https://images-na.ssl-images-amazon.com/images/I/61vGV%2BALNlL._AC_UL1000_.jpg",
+item: "Socks",
+price: "$10",
+description: "Cozy Socks"
 },
 {
-imageUrl: "image.jpg",
-item: "t-shirt",
-price: "$15"
+imageUrl: "https://images-na.ssl-images-amazon.com/images/I/712CCCA1hJL._AC_SX425_.jpg",
+item: "Lizard Coat",
+price: "$15",
+description: "With this coat, you'll have the coolest lizard on the block. Seriously."
 },
 {
-imageUrl: "image.jpg",
-item: "t-shirt",
-price: "$15"
+imageUrl: "https://assetsprx.matchesfashion.com/img/product/1294005_1_zoom.jpg",
+item: "Sweater",
+price: "$150",
+description: "Cozy Winter-Lizard Sweater"
 },
 {
-imageUrl: "image.jpg",
+imageUrl: "https://i.rocdn.com/v2/50726711?w=1024&h=1024",
 item: "t-shirt",
-price: "$15"
+price: "$25",
+description: "Green Double Winter-Lizard"
 }
 ]
+
 // MERCH CARDS
 const makeMerchCards = () => {
     let domString = "";
     for (let i = 0; i < merchItems.length; i++){
-        domString += `<div class="card col-md-6 col-lg-4 card-separation" style="width: 18rem;">`;
-        domString += `<img src="${merchItems[i].imageUrl}" class="card-img-top" alt="...">`;
-        domString += `<div class="card-body">`
-        domString += `<h5 class="card-title">${merchItems[i].item}</h5>`
-        domString += `<p class="card-text"></p>`
-        domString += `<p class="card-text">${merchItems[i].price}</p>`
-        domString += `<button class="btn btn-secondary">BUY NOW</button>`
-        domString += `</div>`
-        domString += `</div>`
+        domString += `<div class="card col-md-6 col-lg-4 card-separation text-body" style="width: 18rem;">`;
+        domString +=    `<img src="${merchItems[i].imageUrl}" class="card-img-top" alt="...">`;
+        domString +=    `<div class="card-body">`;
+        domString +=        `<h5 class="card-title text-center">${merchItems[i].item}</h5>`;
+        domString +=        `<p class="card-text text-center">${merchItems[i].description}</p>`;
+        domString +=        `<p class="card-text text-center">${merchItems[i].price}</p>`;
+        domString +=        `<button id="buyBtn" class="btn btn-dark">BUY</button>`;
+        domString +=     `</div>`;
+        domString += `</div>`;
     }
-    printToDom("merchItemsCards", domString);
+    printToDom("store-container", domString);
 }
 
-makeMerchCards();
+let buyNow = (e) => {
+    
+    console.log("button working")
+}
+
+
+const events = () => {
+    document.getElementById('buyBtn').addEventListener('click', buyNow);
+}
 
 // SUBSCRIPTION FORM FUNCTION
 const emailConfirm = () => {
@@ -185,20 +203,23 @@ const emailConfirm = () => {
     }
 };
 
+
+
 // INITIAL FUNCTION
 const init = () => {
 
     // LOCATION SWITCH STATEMENT
     switch (window.location.href) {
         case 'http://localhost:8080/index.html':
-            document.getElementById('emailButton').addEventListener('click', emailConfirm );
+            document.getElementById('emailButton').addEventListener('click', emailConfirm);
             makeNewsCards();
             break; 
         case 'http://localhost:8080/members.html':
             makeBioCards();
             break;    
         case 'http://localhost:8080/merch.html':
-            console.log('merch');
+            makeMerchCards();
+            events();
             break; 
         case 'http://localhost:8080/music.html':
             console.log('music');
