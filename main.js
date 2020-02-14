@@ -36,11 +36,6 @@ tourDates = [{
     }
 ]
 
-const printToDom = (divId, textToPrint) => {
-    let selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = textToPrint;
-};
-
 const makeTourCards = () => {
     let Domstring = '';
 for(let i = 0; i < tourDates.length; i++) {
@@ -187,12 +182,7 @@ const events = () => {
     document.getElementById('emailButton').addEventListener('click', emailConfirm )
 };
 
-
-
-// INITIAL FUNCTION
-const init = () => {
-    //events();
-    makeTourCards();
+    
 // INITIAL FUNCTION
 const init = () => {
 
