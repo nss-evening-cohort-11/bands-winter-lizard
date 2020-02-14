@@ -96,7 +96,7 @@ item: "t-shirt",
 price: "$15"
 }
 ]
-
+// MERCH CARDS
 const makeMerchCards = () => {
     let domString = "";
     for (let i = 0; i < merchItems.length; i++){
