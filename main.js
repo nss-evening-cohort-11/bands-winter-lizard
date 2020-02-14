@@ -219,7 +219,7 @@ description: "Cozy Winter-Lizard Sweater"
 },
 {
 imageUrl: "https://i.rocdn.com/v2/50726711?w=1024&h=1024",
-item: "t-shirt",
+item: "T-shirt",
 price: "$25",
 description: "Green Double Winter-Lizard"
 }
@@ -235,21 +235,15 @@ const makeMerchCards = () => {
         domString +=        `<h5 class="card-title text-center">${merchItems[i].item}</h5>`;
         domString +=        `<p class="card-text text-center">${merchItems[i].description}</p>`;
         domString +=        `<p class="card-text text-center">${merchItems[i].price}</p>`;
-        domString +=        `<button id="buyBtn" class="btn btn-dark">BUY</button>`;
+        domString +=        `<button id="buyBtn" class="buyBtn btn btn-dark">BUY</button>`;
         domString +=     `</div>`;
         domString += `</div>`;
     }
     printToDom("store-container", domString);
 }
 
-let buyNow = (e) => {
-    
-    console.log("button working")
-}
-
-
-const events = () => {
-    document.getElementById('buyBtn').addEventListener('click', buyNow);
+const buyNow = () => {
+    console.log("buttonArray");
 }
 
 // SUBSCRIPTION FORM FUNCTION
@@ -279,7 +273,7 @@ const init = () => {
             break;    
         case 'http://localhost:8080/merch.html':
             makeMerchCards();
-            events();
+            document.getElementById('buyBtn').addEventListener('click', buyNow);
             break; 
         case 'http://localhost:8080/music.html':
             console.log('music');
