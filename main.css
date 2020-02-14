@@ -9,7 +9,6 @@ body {
   margin: 0px;
 }
 
-img {
 /* PHOTO CAROUSEL */
 
 .carousel-inner img {
@@ -43,14 +42,13 @@ form#subcription {
 .album-card {
   color: black;
   background-color: #0052cc;
-  margin: 10px 20px;
-  padding: 5px;
 
 }
 
 .album-art {
   width: 200px;
   height: 200px;
+}
 /* NEWS CARDS */
 
 #newsInfoCards {

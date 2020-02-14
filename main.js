@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //OBJECT ARRAYS
 const albums = [
     {
@@ -17,9 +16,7 @@ const albums = [
     }
 ]
 
-=======
 // NEWS ARRAY
->>>>>>> master
 const newsArrInfo = [
     {
     title: "Our Newest addition to the Band",
@@ -140,32 +137,28 @@ const emailConfirm = () => {
 };
 
 // ALBUM CARDS FUNCTION
-const printToDom = (divId, textToPrint) => {
-    document.getElementById(divId).innerHTML = textToPrint;
-  };
 
 const makeAlbumCards = () => {
     let domString = '';
   for (let i = 0; i < albums.length; i++) {
-    domString += '<div class="album-card card mb-3" style="max-width: 540px;">'
+    domString += '<div class="card album-card d-flex justify-content-center ml-5 mr-5 mt-4 mb-4">'
     domString +=    '<div class="row no-gutters">'
-    domString +=        '<div class="col-md-4">'
+    domString +=        '<div class="col-md-3">'
     domString +=            `<img class="album-art" src="${albums[i].albumArt}">`
     domString +=        '</div>'
-    domString +=    `<h3 class="album-card-title card-title col-md-8">${albums[i].title}</h3>`
-    domString +=        '<div class="album-card-body card-body">'
-    domString +=            `<h5 class="album-card-release">Release Date: ${albums[i].releaseDate}</h5>`
-    domString +=        `<p class="album-card-text card-text"> Tracks: ${albums[i].tracks}</p>`
+    domString +=            '<div class="card col-md-9 album-card">'
+    domString +=           `<h5>${albums[i].title}</h5>`
+    domString +=           '<div>'
+    domString +=               `<h6 class="card-title">Release Date: ${albums[i].releaseDate}</h6>`
+    domString +=               `<p class="card-text"> Tracks: ${albums[i].tracks}</p>`
+    domString +=           '</div>'
     domString +=        '</div>'
-    domString +=    '</div>'
+    domString +=    '</div>' 
     domString += '</div>'
   }
 
   printToDom('album-container',domString);
 };
-
-makeAlbumCards();
-
 
 // EVENTS
 const events = () => {
@@ -188,7 +181,7 @@ const init = () => {
             console.log('merch');
             break; 
         case 'http://localhost:8080/music.html':
-            console.log('music');
+            makeAlbumCards();
             break;  
         case 'http://localhost:8080/tour.html':
             console.log('tour');
