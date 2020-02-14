@@ -3,7 +3,9 @@ body {
     color: white;
 }
 
-img {
+/* PHOTO CAROUSEL */
+
+.carousel-inner img {
   height: 300px;
 }
 
@@ -30,6 +32,8 @@ form#subcription {
     margin-right: 10px;
 }
 
+/* NEWS CARDS */
+
 #newsInfoCards {
   background-color: #8FDC97;
   margin: 25px;
@@ -43,4 +47,9 @@ form#subcription {
 
 #newsHead {
   margin-top: 50px;
+}
+
+/* MEMBER BIOS CARDS */
+.bio-container {
+    margin-bottom: 30px;
 }
