@@ -6,13 +6,13 @@ tourDates = [{
     venue: "The Dungeon"},
 
     {date: "03/01/2020",
-    city: "San francisco",
+    city: "San Francisco",
     state: "CA",
     venue: "The Devils Playground",
     },
 
     {date: "03/03/2020",
-    city: "SanDiego",
+    city: "San Diego",
     state: "CA",
     venue: "The Labyrinth",
     },
@@ -41,8 +41,8 @@ const makeTourCards = () => {
     let Domstring = '';
 for(let i = 0; i < tourDates.length; i++) {
     Domstring += `<div class="tour-card">`;
-    Domstring += `<h5 class="tour-card-header">${tourDates[i].date}</h5>`;
-    Domstring +=  '<div class="card-body">';
+    Domstring += `<h5 class="tour-card-header d-flex align-items-center  card-header">${tourDates[i].date}</h5>`;
+    Domstring +=  '<div class="card-body bg-dark">';
     Domstring +=  `<h5 class="card-title">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
     Domstring +=  `<p class="card-text">${tourDates[i].venue}</p>`;
     Domstring +=  '</div>';

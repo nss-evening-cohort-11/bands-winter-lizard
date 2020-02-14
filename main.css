@@ -35,11 +35,11 @@ form#subcription {
 .tour-card {
   display: flex;
   margin: 8px;
-  background-color: rgb(49, 47, 47);
 }
 
 .tour-card-header {
   background-color: darkgray;
+
 }
 /* NEWS CARDS */
 
