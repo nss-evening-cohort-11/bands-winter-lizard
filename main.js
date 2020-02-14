@@ -40,7 +40,7 @@ const makeTourCards = () => {
     let Domstring = '';
 for(let i = 0; i < tourDates.length; i++) {
     Domstring += `<div class="tour-card">`;
-    Domstring += `<h5 class="card-header">${tourDates[i].date}</h5>`;
+    Domstring += `<h5 class="tour-card-header">${tourDates[i].date}</h5>`;
     Domstring +=  '<div class="card-body">';
     Domstring +=  `<h5 class="card-title">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
     Domstring +=  `<p class="card-text">${tourDates[i].venue}</p>`;
