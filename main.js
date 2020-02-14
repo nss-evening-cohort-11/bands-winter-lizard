@@ -36,6 +36,7 @@ tourDates = [{
     }
 ]
 
+
 const makeTourCards = () => {
     let Domstring = '';
 for(let i = 0; i < tourDates.length; i++) {
