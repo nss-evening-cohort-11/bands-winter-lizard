@@ -206,7 +206,7 @@ const makeAlbumCards = () => {
     domString +=           `<h5 class="album-card card-header green-bg text-dark">${albums[i].title}</h5>`
     domString +=           '<div class="album-card card-body">'
     domString +=               `<h6 class="card-title">Release Date: ${albums[i].releaseDate}</h6>`
-    domString +=               `<p class="card-text">Tracks: ${albums[i].tracks}</p>`
+    domString +=               `<p class="card-text">Tracks: <div id"tracks-container"></div></p>`
     domString +=           '</div>'
     domString +=        '</div>'
     domString +=    '</div>' 
@@ -215,6 +215,17 @@ const makeAlbumCards = () => {
 
   printToDom('album-container',domString);
 };
+
+const listTracks = () => {
+    let domString = '';
+  for (let i = 0; i < albums.length; i++) {
+      // if tracks array is certain length, or for loop within this loop
+    domString += '<ol>'
+    domString +=    `<li>${albums[i].tracks[i]}</li>`
+    domString += '</ol>'
+  }
+
+}
 
 // EVENTS
 const events = () => {
