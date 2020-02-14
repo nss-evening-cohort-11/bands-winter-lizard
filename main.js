@@ -235,7 +235,7 @@ const makeMerchCards = () => {
         domString +=        `<h5 class="card-title text-center">${merchItems[i].item}</h5>`;
         domString +=        `<p class="card-text text-center">${merchItems[i].description}</p>`;
         domString +=        `<p class="card-text text-center">${merchItems[i].price}</p>`;
-        domString +=        `<button id="buyBtn" class="buyBtn btn btn-dark">BUY</button>`;
+        domString +=        `<button class="buyBtn btn btn-dark">BUY</button>`;
         domString +=     `</div>`;
         domString += `</div>`;
     }
@@ -273,7 +273,7 @@ const init = () => {
             break;    
         case 'http://localhost:8080/merch.html':
             makeMerchCards();
-            document.getElementById('buyBtn').addEventListener('click', buyNow);
+            document.getElementByClass('buyBtn btn btn-dark').addEventListener('click', buyNow);
             break; 
         case 'http://localhost:8080/music.html':
             console.log('music');
