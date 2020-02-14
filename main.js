@@ -60,6 +60,9 @@ const bios = [
     }
 ];
 
+// CART ARRAY
+const cart = [];
+
 // PRINT TO DOM
 const printToDom = (divId, textToPrint) => {
     const selectedId = document.getElementById(divId)
