@@ -36,10 +36,6 @@ tourDates = [{
     }
 ]
 
-const printToDom = (divId, textToPrint) => {
-    let selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = textToPrint;
-};
 
 const makeTourCards = () => {
     let Domstring = '';
@@ -188,11 +184,6 @@ const events = () => {
 };
 
 
-
-// INITIAL FUNCTION
-const init = () => {
-    //events();
-    makeTourCards();
 // INITIAL FUNCTION
 const init = () => {
 
