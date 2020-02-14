@@ -183,7 +183,7 @@ const events = () => {
     document.getElementById('emailButton').addEventListener('click', emailConfirm )
 };
 
-
+    
 // INITIAL FUNCTION
 const init = () => {
 
