@@ -197,14 +197,14 @@ const emailConfirm = () => {
 const makeAlbumCards = () => {
     let domString = '';
   for (let i = 0; i < albums.length; i++) {
-    domString += '<div class=" album-cards card d-flex justify-content-center ml-5 mr-5 mt-4 mb-4>'
+    domString += '<div class="card album-card d-flex justify-content-center bg-dark ml-5 mr-5 mt-4 mb-4">'
     domString +=    '<div class="row no-gutters">'
-    domString +=        '<div class="col-md-2">'
-    domString +=            `<img class="card card-img" src="${albums[i].albumArt}">`
+    domString +=        '<div class="col-md-3">'
+    domString +=           `<img src="${albums[i].albumArt}" class="card card-img">`
     domString +=        '</div>'
-    domString +=            '<div class="card col-md-9 album-card">'
-    domString +=           `<h5 class="card-header">${albums[i].title}</h5>`
-    domString +=           '<div class="card-body"> '
+    domString +=        '<div class="card col-md-9 bg-dark text-white">'
+    domString +=           `<h5 class="album-card card-header green-bg text-dark">${albums[i].title}</h5>`
+    domString +=           '<div class="album-card card-body">'
     domString +=               `<h6 class="card-title">Release Date: ${albums[i].releaseDate}</h6>`
     domString +=               `<p class="card-text">Tracks: ${albums[i].tracks}</p>`
     domString +=           '</div>'
