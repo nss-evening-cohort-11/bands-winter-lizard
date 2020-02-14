@@ -32,6 +32,15 @@ form#subcription {
     margin-right: 10px;
 }
 
+.tour-card {
+  display: flex;
+  margin: 8px;
+}
+
+.tour-card-header {
+  background-color: darkgray;
+
+}
 /* NEWS CARDS */
 
 #newsInfoCards {
