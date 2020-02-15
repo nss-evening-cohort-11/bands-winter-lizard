@@ -38,6 +38,10 @@ form#subcription {
     margin-right: 10px;
 }
 
+#email-alert {
+  color: red;
+}
+
 /* ALBUMS */
 .album-art {
   width: 200px;

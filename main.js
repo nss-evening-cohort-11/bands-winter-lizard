@@ -335,6 +335,8 @@ const emailConfirm = () => {
 document.getElementById("email-alert").innerHTML = alertText;
 };
 
+
+
 // ALBUM CARDS FUNCTION
 const makeAlbumCards = () => {
     let domString = '';
@@ -371,7 +373,14 @@ const init = () => {
     // LOCATION SWITCH STATEMENT
     switch (window.location.href) {
         case 'http://localhost:8080/index.html':
-            document.getElementById('email-button').addEventListener('click', emailConfirm );
+            document.getElementById('email-button').addEventListener('click', enterKey );
+            const input = document.getElementById('exampleInputEmail1');
+            input.addEventListener('keyup', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById('email-button').click();
+                }
+            });
             makeNewsCards();
             break; 
         case 'http://localhost:8080/members.html':
