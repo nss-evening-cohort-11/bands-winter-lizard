@@ -41,10 +41,13 @@ const makeTourCards = () => {
     let Domstring = '';
 for(let i = 0; i < tourDates.length; i++) {
     Domstring += `<div class="tour-card">`;
-    Domstring += `<h5 class="tour-card-header d-flex align-items-center  card-header">${tourDates[i].date}</h5>`;
+    Domstring += `<h5 class="tour-card-header d-flex align-items-center card-header">${tourDates[i].date}</h5>`;
     Domstring +=  '<div class="card-body bg-dark">';
     Domstring +=  `<h5 class="card-title">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
     Domstring +=  `<p class="card-text">${tourDates[i].venue}</p>`;
+    Domstring +=  '<div class="button-soldout d-flex flex-row-reverse">';
+    Domstring +=  '<button type="button" class="btn btn-lg btn-light " data-toggle="popover" title="SOLD OUT" data-content="Please select another event.">Buy Tickets</button>';
+    Domstring +=  '</div>';
     Domstring +=  '</div>';
     Domstring +=  '</div>';
 
