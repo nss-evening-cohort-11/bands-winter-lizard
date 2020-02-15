@@ -1,18 +1,18 @@
 //OBJECT ARRAYS
 const albums = [
     {
-        title: "WinterLizard EP",
+        title: "WINTER-LIZARD EP",
         albumArt: "https://i1.sndcdn.com/artworks-000053909121-6qx5rc-t500x500.jpg",
         soundLink: "https://soundcloud.com/winterlizard/sets/winterlizard-ep",
         releaseDate: "August 13, 2013",
-        tracks: ["Erosion of My Will", "Massacre of Inquisition", "The Abyss", "Fatal Existence"]   
+        tracks: ["EROSION OF MY WILL", "MASSACRE OF INQUISITION", "THE ABYSS", "FATAL EXISTENCE"]   
     },
     {
-        title: "Electric Shell - David Gardner & Jon Brown",
+        title: "ELECTRIC SHELL - DAVID GARDNER & JON BROWN",
         albumArt: "https://scontent-den4-1.xx.fbcdn.net/v/t31.0-8/p960x960/13613698_122845534813253_8789548996796216390_o.jpg?_nc_cat=108&_nc_ohc=Gl8ADuE6PtkAX-Ab3dW&_nc_ht=scontent-den4-1.xx&_nc_tp=6&oh=79f268722c05f17d3cb21f3ea9c2650e&oe=5EBD5892",
         soundLink: "https://www.youtube.com/channel/UCaQVI-DPjGK1jjQvwH2MkpA/videos",
         releaseDate: "July 04, 2016",
-        tracks: ["Neptune 8", "Sky Flash", "Premeditation", "Bed of Broken Glass", "Lasers Split by Razors"]   
+        tracks: ["NEPTUNE 8", "SKY FLASH", "PREMEDITATION", "BED OF BROKEN GLASS", "LASERS SPLIT BY RAZORS"]   
     }
 ]
 
@@ -58,21 +58,21 @@ tourDates = [{
 
 
 const makeTourCards = () => {
-    let Domstring = '';
+    let domString = '';
 for(let i = 0; i < tourDates.length; i++) {
-    Domstring += `<div class="tour-card">`;
-    Domstring += `<h5 class="tour-card-header d-flex align-items-center card-header">${tourDates[i].date}</h5>`;
-    Domstring +=  '<div class="card-body bg-dark">';
-    Domstring +=  `<h5 class="card-title">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
-    Domstring +=  `<p class="card-text">${tourDates[i].venue}</p>`;
-    Domstring +=  '<div class="button-soldout d-flex flex-row-reverse">';
-    Domstring +=  '<button type="button" class="btn btn-lg btn-secondary buy-btn" title="SOLD OUT">Buy Tickets</button>';
-    Domstring +=  '</div>';
-    Domstring +=  '</div>';
-    Domstring +=  '</div>';
+    domString += `<div class="tour-card w-75 mx-auto mb-4">`;
+    domString +=    `<h5 id="tourLocation" class="tour-card-header d-flex align-items-center card-header text-body">${tourDates[i].date}</h5>`;
+    domString +=    '<div class="card-body bg-dark">';
+    domString +=        `<h5 class="card-title text-uppercase">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
+    domString +=        `<p class="card-text text-uppercase ml-4">${tourDates[i].venue}</p>`;
+    domString +=        '<div class="button-soldout d-flex flex-row-reverse">';
+    domString +=            '<button type="button" class="btn btn-lg btn-secondary buy-btn text-uppercase border-white" title="SOLD OUT">Buy Tickets</button>';
+    domString +=        '</div>';
+    domString +=    '</div>';
+    domString +=  '</div>';
 
 }
-printToDom('tour-cards',Domstring);
+printToDom('tour-cards',domString);
 
 let assignButton = document.getElementsByClassName('buy-btn');
 for (var i=0; i < assignButton.length; i++) {
@@ -118,31 +118,31 @@ const newsArrInfo = [
 const bios = [
     {
         imageUrl: "https://scontent.fbna1-2.fna.fbcdn.net/v/t1.0-9/10678579_749345165101262_849584611814256163_n.jpg?_nc_cat=109&_nc_ohc=UZkYhRGgLlwAX_T61_T&_nc_ht=scontent.fbna1-2.fna&oh=aceeeb5d104fd4e22ff27c93145ce774&oe=5F03A3E0",
-        name: "David",
+        name: "DAVID",
         role: "Vocals & Lyrics",
         bio: "As far as we can estimate, some bronzy blades are thought of simply as surprises. The pulsing albatross comes from a negroid relation. A licit current's trip comes with it the thought that the plumaged committee is a plywood. To be more specific, some glottic profits are thought of simply as peaces."
     },
     {
         imageUrl: "https://scontent-den4-1.xx.fbcdn.net/v/t31.0-8/s960x960/1507286_616290951740018_772292319_o.jpg?_nc_cat=102&_nc_ohc=ajxH03O-sn4AX8xTXAU&_nc_ht=scontent-den4-1.xx&oh=76cbc241f6d7e705fc5815ead904c539&oe=5EBDDD97",
-        name: "Gary",
+        name: "GARY",
         role: "Guitars",
         bio: "Those rafts are nothing more than tulips. To be more specific, before pleasures, foreheads were only bathrooms. A meter can hardly be considered an unlopped icon without also being a dibble. A quince can hardly be considered a saltless day without also being a gondola."
     },
     {
         imageUrl: "https://scontent-den4-1.xx.fbcdn.net/v/t31.0-8/s960x960/1512176_616290968406683_1448758447_o.jpg?_nc_cat=105&_nc_ohc=BGqLqyQfszcAX9AaPI3&_nc_ht=scontent-den4-1.xx&oh=37d2ae567440eeea40236e8cbc57501e&oe=5EB6C501",
-        name: "Mike",
+        name: "MIKE",
         role: "Guitars",
         bio: "The first hated trial is, in its own way, a chicken. An outright amount without sons is truly a betty of distyle starters. A tearless accelerator is a sled of the mind. The hedges could be said to resemble lengthy parentheses."
     },
     {
         imageUrl: "https://scontent-den4-1.xx.fbcdn.net/v/t31.0-8/s960x960/1511686_616291578406622_1596941626_o.jpg?_nc_cat=103&_nc_ohc=ma3eFxQDNnYAX_hmeng&_nc_ht=scontent-den4-1.xx&oh=eb63d0a45ba029dabd3cac4cb2fe2a1b&oe=5EC0FFAC",
-        name: "Niamh",
+        name: "NIAHM",
         role: "Bass",
         bio: "To be more specific, the dress of a fahrenheit becomes a churchy afternoon. Nowhere is it disputed that one cannot separate koreans from forspent elements. The postponed notebook reveals itself as an unmourned cymbal to those who look. If this was somewhat unclear, the literature would have us believe that a phylloid degree is not but a fridge."
     },
     {
         imageUrl: "https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/10592735_749345121767933_1675345667679864236_n.jpg?_nc_cat=104&_nc_ohc=QX_CLfYG8bsAX--lUDV&_nc_ht=scontent-den4-1.xx&oh=9b3eb127520a3bcd9d07bc712ef48043&oe=5F02671E",
-        name: "Jon",
+        name: "JON",
         role: "Drums/Percussion",
         bio: "A drill can hardly be considered a risky buffet without also being an eyebrow. Those washers are nothing more than physicians. Some nary strangers are thought of simply as guns. The first selfsame zebra is, in its own way, an amusement."
     }
@@ -185,7 +185,7 @@ const makeBioCards = () => {
         domString += `          <h5 class="card-header">${bios[i].name}</h5>`
         domString += '          <div class="card-body">'
         domString += `              <h6 class="card-title">${bios[i].role}</h6>`
-        domString += `              <p class="card-text">${bios[i].bio}</p>`
+        domString += `              <p class="card-text ml-2">${bios[i].bio}</p>`
         domString += '          </div>'
         domString += '       </div>'
         domString += '   </div>' 
@@ -332,8 +332,8 @@ const makeAlbumCards = () => {
     domString +=           `<h5 class= "card-header green-bg text-dark">${albums[i].title}</h5>`
     domString +=           '<div class="card-body">'
     domString +=           `<h6><a href="${albums[i].soundLink}" class="font-italic text-white">click here to listen</a></h6>`
-    domString +=               `<h6 class="card-title">Release Date: ${albums[i].releaseDate}</h6>`
-    domString +=               `<p class="card-text">Tracks: <div id"tracks-container"></div></p>`
+    domString +=               `<h6 class="card-title">RELEASE DATE: ${albums[i].releaseDate}</h6>`
+    domString +=               `<p class="card-text">TRACKS: <div id"tracks-container"></div></p>`
     domString +=                    '<ol>'
         let tracksArray = albums[i].tracks;
         for(let k = 0; k < tracksArray.length; k++){

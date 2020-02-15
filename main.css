@@ -78,4 +78,7 @@ form#subcription {
     margin-bottom: 30px;
 }
 
-/* MERCH CARDS */
+/* TOUR CARDS */
+#tourLocation {
+  background-color: #8FDC97;
+}
