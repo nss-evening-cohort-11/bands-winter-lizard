@@ -90,3 +90,20 @@ form#subcription {
 #cart {
   background-color: #8FDC97; 
 }
+
+/* MERCH CARDS */
+#buttonFooter button{
+  border:  #8FDC97 solid 2px;
+}
+#all {
+  border:  #8FDC97 solid 2px;
+} 
+#under-5{
+  border:  #8FDC97 solid 2px;
+}
+#between5-10{
+  border:  #8FDC97 solid 2px;
+}
+#over-10{
+  border:  #8FDC97 solid 2px;
+}

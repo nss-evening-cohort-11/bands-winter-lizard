@@ -223,7 +223,7 @@ const printToDom = (divId, textToPrint) => {
 const makeNewsCards = () => {
     let domString = "";
     for (let i = 0; i < newsArrInfo.length; i++) {
-        domString += `<div class="card mx-auto w-75 text-body" id="newsInfoCards">`;
+        domString += `<div class="card mx-auto w-75 text-body border-white" id="newsInfoCards">`;
         domString +=   `<div class="card-body">`;
         domString +=    `<h4 class="text-center">${newsArrInfo[i].title}</h4>`;
         domString +=    `<img src="${newsArrInfo[i].imageUrl}" class="float-left" id="newsImg"`;
@@ -247,7 +247,7 @@ const makeBioCards = () => {
         domString += `          <img src="${bios[i].imageUrl}" class="card card-img bg-dark" alt="${bios[i].name} playing music on stage">`
         domString += '       </div>'
         domString += '       <div class="card col-md-10 bg-dark text-white">'
-        domString += `          <h5 class="card-header">${bios[i].name}</h5>`
+        domString += `          <h5 class="card-header ">${bios[i].name}</h5>`
         domString += '          <div class="card-body">'
         domString += `              <h6 class="card-title">${bios[i].role}</h6>`
         domString += `              <p class="card-text ml-2">${bios[i].bio}</p>`
@@ -266,15 +266,15 @@ const makeMerchCards = (merchandise) => {
     let domString = "";
     for (let i = 0; i < merchandise.length; i++){
         merchItems[i].buyId = buyId++;
-        domString += `<div id="merchCard" class="card col-md-6 col-lg-3 m-3 p-2 card-separation text-body" style="width: 18rem;">`;
+        domString += `<div id="merchCard" class="card col-md-6 col-lg-3 m-3 p-2 bg-dark card-separation text-body" style="width: 18rem;">`;
         domString +=    `<img src="${merchandise[i].imageUrl}" id="merchImage" class="card-img-top">`;
         domString +=    `<div class="card-body p-1 m-0">`;
-        domString +=        `<h5 class="card-title text-center">${merchandise[i].item}</h5>`;
-        domString +=        `<p class="card-text text-center">${merchandise[i].description}</p>`;
-        domString +=        `<p class="card-text text-center">$${merchandise[i].price}</p>`;  
+        domString +=        `<h5 class="card-title text-center text-white text-uppercase">${merchandise[i].item}</h5>`;
+        domString +=        `<p class="card-text text-center text-white">${merchandise[i].description}</p>`;
+        domString +=        `<p class="card-text text-center text-white">$${merchandise[i].price}</p>`;  
         domString +=     `</div>`;
-        domString +=     `<footer>`;
-        domString +=     `<button id="${merchandise[i].buyId}" class="btn buy-btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
+        domString +=     `<footer id="buttonFooter">`;
+        domString +=        `<button id="${merchandise[i].buyId}" class="btn buy-btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
         domString +=     `</footer>`;
         domString += `</div>`;
     }
@@ -326,7 +326,7 @@ const printCart = (cart) => {
         domString += '          <div class="card-body p-1 m-0">';
         domString += `              <h5 class="card-title text-center">${cart[i].item}</h5>`;
         domString += `              <p class="card-text text-center">${cart[i].description}</p>`;
-        domString += `              <p class="card-text text-center">${cart[i].price}</p>`;  
+        domString += `              <p class="card-text text-center">$${cart[i].price}</p>`;  
         domString += '          </div>';
         domString += '          <footer>';
         domString += `              <button id="${cart[i].buyId}" class="btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
