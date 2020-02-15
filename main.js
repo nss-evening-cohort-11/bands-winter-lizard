@@ -201,7 +201,7 @@ const emailConfirm = () => {
     } else {
         alertText = 'Enter valid email address';
     }
-document.getElementById("demo").innerHTML = text;
+document.getElementById("email-alert").innerHTML = alertText;
 };
 
 // ALBUM CARDS FUNCTION
@@ -241,7 +241,7 @@ const init = () => {
     // LOCATION SWITCH STATEMENT
     switch (window.location.href) {
         case 'http://localhost:8080/index.html':
-            document.getElementById('emailButton').addEventListener('click', emailConfirm );
+            document.getElementById('email-button').addEventListener('click', emailConfirm );
             makeNewsCards();
             break; 
         case 'http://localhost:8080/members.html':
