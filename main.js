@@ -223,6 +223,7 @@ const makeAlbumCards = () => {
   printToDom('album-container',domString);
 };
 
+
 // EVENTS
 const events = () => {
     document.getElementById('emailButton').addEventListener('click', emailConfirm )
