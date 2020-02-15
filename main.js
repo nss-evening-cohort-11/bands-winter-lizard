@@ -197,16 +197,22 @@ const emailConfirm = () => {
 const makeAlbumCards = () => {
     let domString = '';
   for (let i = 0; i < albums.length; i++) {
-    domString += '<div class="card album-card d-flex justify-content-center bg-dark ml-5 mr-5 mt-4 mb-4">'
+    domString += '<div class="card d-flex justify-content-center bg-dark ml-5 mr-5 mt-4 mb-4">'
     domString +=    '<div class="row no-gutters">'
-    domString +=        '<div class="col-md-3">'
+    domString +=        '<div class="col-md-4">'
     domString +=           `<img src="${albums[i].albumArt}" class="card card-img">`
     domString +=        '</div>'
-    domString +=        '<div class="card col-md-9 bg-dark text-white">'
-    domString +=           `<h5 class="album-card card-header green-bg text-dark">${albums[i].title}</h5>`
-    domString +=           '<div class="album-card card-body">'
+    domString +=        '<div class="card col-md-8 bg-dark text-white">'
+    domString +=           `<h5 class= "card-header green-bg text-dark"><a href="${albums[i].soundLink}" class="text-decoration-none">${albums[i].title}</a></h5>`
+    domString +=           '<div class="card-body">'
     domString +=               `<h6 class="card-title">Release Date: ${albums[i].releaseDate}</h6>`
     domString +=               `<p class="card-text">Tracks: <div id"tracks-container"></div></p>`
+    domString +=                    '<ol>'
+        let tracksArray = albums[i].tracks;
+        for(let k = 0; k < tracksArray.length; k++){
+            domString +=    `<li>${tracksArray[k]}</li>`
+        };
+    domString +=                    '<ol>'    
     domString +=           '</div>'
     domString +=        '</div>'
     domString +=    '</div>' 
@@ -215,17 +221,6 @@ const makeAlbumCards = () => {
 
   printToDom('album-container',domString);
 };
-
-const listTracks = () => {
-    let domString = '';
-  for (let i = 0; i < albums.length; i++) {
-      // if tracks array is certain length, or for loop within this loop
-    domString += '<ol>'
-    domString +=    `<li>${albums[i].tracks[i]}</li>`
-    domString += '</ol>'
-  }
-
-}
 
 // EVENTS
 const events = () => {
