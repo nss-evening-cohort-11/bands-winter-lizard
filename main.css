@@ -3,6 +3,12 @@ body {
     color: white;
 }
 
+.logo {
+  width: 75px;
+  height: 75px;
+  margin: 0px;
+}
+
 /* PHOTO CAROUSEL */
 
 .carousel-inner img {
@@ -32,6 +38,16 @@ form#subcription {
     margin-right: 10px;
 }
 
+/* ALBUMS */
+.album-art {
+  width: 200px;
+  height: 200px;
+}
+
+.green-bg {
+  background-color: #8FDC97;
+}
+
 .tour-card {
   display: flex;
   margin: 8px;
@@ -39,7 +55,6 @@ form#subcription {
 
 .tour-card-header {
   background-color: darkgray;
-
 }
 /* NEWS CARDS */
 
