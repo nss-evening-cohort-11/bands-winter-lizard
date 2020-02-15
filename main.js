@@ -186,86 +186,112 @@ const merchItems = [
 {
 imageUrl: "https://m.media-amazon.com/images/I/61cph-9AgVL._AC_UL320_.jpg",
 item: "T-shirt",
-price: "$15",
+price: 15,
 description: "Yellow Winter-Lizard"  
 },
 {
 imageUrl: "https://images.cloudpuble.com/thumb/1010x1010/129.front/White.0/8f6407fde9be360d44b64969e3fb9744/a7/2019/02/21/MXPP-5c6f500fd9218.png",
 item: "Coffee Cup",
-price: "$10",
+price: 10,
 description: "Stay warm during the winter with your favorite hot beverage in the cup!"
 },
 {
 imageUrl: "https://ih0.redbubble.net/image.320352350.2352/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.jpg",
 item: "Sticker",
-price: "$5",
+price: 5,
 description: "Black Winter-Lizard Sticker"
 },
 {
 imageUrl: "https://cdn.designbyhumans.com/product_images/p/53940.f56.9c492S7ay1Cm2MjUAAA-650x650-b-p.jpg",
 item: "Sticker",
-price: "$5",
+price: 5,
 description: "Green Winter-Lizard Sticker"
 },    
 {
 imageUrl: "https://i.ebayimg.com/images/g/BN4AAOSw1CBbr~Rh/s-l640.jpg",
 item: "Lizard Coat",
-price: "$15",
+price: 15,
 description: "Keep your lizard cozy this winter!"
 },
 {
 imageUrl: "https://i.ebayimg.com/images/g/ZRsAAOSwUrZd6acf/s-l640.jpg",
 item: "Socks",
-price: "$10",
+price: 6,
 description: "Cozy Socks"
 },
 {
 imageUrl: "https://images-na.ssl-images-amazon.com/images/I/712CCCA1hJL._AC_SX425_.jpg",
 item: "Lizard Coat",
-price: "$15",
+price: 9,
 description: "With this coat, you'll have the coolest lizard on the block. Seriously."
 },
 {
 imageUrl: "https://assetsprx.matchesfashion.com/img/product/1294005_1_zoom.jpg",
 item: "Sweater",
-price: "$150",
+price: 150,
 description: "Cozy Winter-Lizard Sweater"
 },
 {
 imageUrl: "https://i.rocdn.com/v2/50726711?w=1024&h=1024",
 item: "T-shirt",
-price: "$25",
+price: 25,
 description: "Green Double Winter-Lizard"
 }
 ]
 
 // MERCH CARDS
 let buyId = 0;
-const makeMerchCards = () => {
+const makeMerchCards = (merchandise) => {
     let domString = "";
-    for (let i = 0; i < merchItems.length; i++){
+    for (let i = 0; i < merchandise.length; i++){
         merchItems[i].buyId = buyId++;
         domString += `<div id="merchCard" class="card col-md-6 col-lg-3 m-3 card-separation text-body" style="width: 18rem;">`;
-        domString +=    `<img src="${merchItems[i].imageUrl}" id="merchImage" class="card-img-top">`;
+        domString +=    `<img src="${merchandise[i].imageUrl}" id="merchImage" class="card-img-top">`;
         domString +=    `<div class="card-body p-1 m-0">`;
-        domString +=        `<h5 class="card-title text-center">${merchItems[i].item}</h5>`;
-        domString +=        `<p class="card-text text-center">${merchItems[i].description}</p>`;
-        domString +=        `<p class="card-text text-center">${merchItems[i].price}</p>`;
+        domString +=        `<h5 class="card-title text-center">${merchandise[i].item}</h5>`;
+        domString +=        `<p class="card-text text-center">${merchandise[i].description}</p>`;
+        domString +=        `<p class="card-text text-center">$${merchandise[i].price}</p>`;
         domString +=        `<footer>`;
-        domString +=        `<button id="${merchItems[i].buyId}" class="btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
+        domString +=        `<button id="${merchandise[i].buyId}" class="btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
         domString +=        `</footer>`   
         domString +=     `</div>`;
         domString += `</div>`;
     }
     printToDom("store-container", domString);
-    for (const item of merchItems)
+    for (const item of merchandise)
         document.getElementById(item.buyId).addEventListener('click', buyNow);
 }
-
 
 const buyNow = (buy) => {
     console.log(buyId);
 }
+
+// MERCH FILTER
+const filterItems = (e) => {
+    const buttonId = e.target.id;
+    if (buttonId === "all") {
+        makeMerchCards(merchItems);
+    } else {
+        const merchCost = [];
+        for (let i = 0; i < merchItems.length; i++){
+            if(merchItems[i].price <= 5) {
+               if(buttonId === "under-5"){
+                merchCost.push(merchItems[i]); 
+               }; 
+            } 
+            else if (merchItems[i].price >= 6 && merchItems[i].price <= 10) {
+                if(buttonId === "between5-10"){
+                    merchCost.push(merchItems[i]); 
+                }; 
+            } 
+            else if (merchItems[i].price >= 11)
+            if(buttonId === "over-10"){
+                merchCost.push(merchItems[i]); 
+            };
+        }
+        makeMerchCards(merchCost);
+    }
+};
 
 
 // SUBSCRIPTION FORM FUNCTION
@@ -323,8 +349,11 @@ const init = () => {
             makeBioCards();
             break;    
         case 'http://localhost:8080/merch.html':
-            makeMerchCards();
-            
+            document.getElementById('under-5').addEventListener('click', filterItems);
+            document.getElementById('between5-10').addEventListener('click', filterItems);
+            document.getElementById('over-10').addEventListener('click', filterItems);
+            document.getElementById('all').addEventListener('click', filterItems);
+            makeMerchCards(merchItems);
             break; 
         case 'http://localhost:8080/music.html':
             makeAlbumCards();
