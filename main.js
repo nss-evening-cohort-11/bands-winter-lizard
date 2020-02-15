@@ -1,4 +1,6 @@
-//OBJECT ARRAYS
+/*--- OBJECT ARRAYS ---*/
+
+// ALBUMS ARRAY
 const albums = [
     {
         title: "WINTER-LIZARD EP",
@@ -16,7 +18,7 @@ const albums = [
     }
 ]
 
-//Arrays//
+// TOUR ARRAY
 tourDates = [{
     date: "02/28/2020",
     city: "Sacramento",
@@ -148,6 +150,69 @@ const bios = [
     }
 ];
 
+// MERCH CARDS
+const merchItems = [
+    {
+    imageUrl: "https://m.media-amazon.com/images/I/61cph-9AgVL._AC_UL320_.jpg",
+    item: "T-shirt",
+    price: 15,
+    description: "Yellow Winter-Lizard"  
+    },
+    {
+    imageUrl: "https://images.cloudpuble.com/thumb/1010x1010/129.front/White.0/8f6407fde9be360d44b64969e3fb9744/a7/2019/02/21/MXPP-5c6f500fd9218.png",
+    item: "Coffee Cup",
+    price: 10,
+    description: "Stay warm during the winter with your favorite hot beverage in the cup!"
+    },
+    {
+    imageUrl: "https://ih0.redbubble.net/image.320352350.2352/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.jpg",
+    item: "Sticker",
+    price: 5,
+    description: "Black Winter-Lizard Sticker"
+    },
+    {
+    imageUrl: "https://cdn.designbyhumans.com/product_images/p/53940.f56.9c492S7ay1Cm2MjUAAA-650x650-b-p.jpg",
+    item: "Sticker",
+    price: 5,
+    description: "Green Winter-Lizard Sticker"
+    },    
+    {
+    imageUrl: "https://i.ebayimg.com/images/g/BN4AAOSw1CBbr~Rh/s-l640.jpg",
+    item: "Lizard Coat",
+    price: 15,
+    description: "Keep your lizard cozy this winter!"
+    },
+    {
+    imageUrl: "https://i.ebayimg.com/images/g/ZRsAAOSwUrZd6acf/s-l640.jpg",
+    item: "Socks",
+    price: 6,
+    description: "Cozy Socks"
+    },
+    {
+    imageUrl: "https://images-na.ssl-images-amazon.com/images/I/712CCCA1hJL._AC_SX425_.jpg",
+    item: "Lizard Coat",
+    price: 9,
+    description: "With this coat, you'll have the coolest lizard on the block. Seriously."
+    },
+    {
+    imageUrl: "https://assetsprx.matchesfashion.com/img/product/1294005_1_zoom.jpg",
+    item: "Sweater",
+    price: 150,
+    description: "Cozy Winter-Lizard Sweater"
+    },
+    {
+    imageUrl: "https://i.rocdn.com/v2/50726711?w=1024&h=1024",
+    item: "T-shirt",
+    price: 25,
+    description: "Green Double Winter-Lizard"
+    }
+    ];
+
+// CART ARRAY
+const cartArray = [];
+
+/*--- FUNCTIONS ---*/
+
 // PRINT TO DOM
 const printToDom = (divId, textToPrint) => {
     const selectedId = document.getElementById(divId)
@@ -196,88 +261,28 @@ const makeBioCards = () => {
 
 
 // MERCH CARDS
-const merchItems = [
-{
-imageUrl: "https://m.media-amazon.com/images/I/61cph-9AgVL._AC_UL320_.jpg",
-item: "T-shirt",
-price: 15,
-description: "Yellow Winter-Lizard"  
-},
-{
-imageUrl: "https://images.cloudpuble.com/thumb/1010x1010/129.front/White.0/8f6407fde9be360d44b64969e3fb9744/a7/2019/02/21/MXPP-5c6f500fd9218.png",
-item: "Coffee Cup",
-price: 10,
-description: "Stay warm during the winter with your favorite hot beverage in the cup!"
-},
-{
-imageUrl: "https://ih0.redbubble.net/image.320352350.2352/st%2Csmall%2C215x235-pad%2C210x230%2Cf8f8f8.jpg",
-item: "Sticker",
-price: 5,
-description: "Black Winter-Lizard Sticker"
-},
-{
-imageUrl: "https://cdn.designbyhumans.com/product_images/p/53940.f56.9c492S7ay1Cm2MjUAAA-650x650-b-p.jpg",
-item: "Sticker",
-price: 5,
-description: "Green Winter-Lizard Sticker"
-},    
-{
-imageUrl: "https://i.ebayimg.com/images/g/BN4AAOSw1CBbr~Rh/s-l640.jpg",
-item: "Lizard Coat",
-price: 15,
-description: "Keep your lizard cozy this winter!"
-},
-{
-imageUrl: "https://i.ebayimg.com/images/g/ZRsAAOSwUrZd6acf/s-l640.jpg",
-item: "Socks",
-price: 6,
-description: "Cozy Socks"
-},
-{
-imageUrl: "https://images-na.ssl-images-amazon.com/images/I/712CCCA1hJL._AC_SX425_.jpg",
-item: "Lizard Coat",
-price: 9,
-description: "With this coat, you'll have the coolest lizard on the block. Seriously."
-},
-{
-imageUrl: "https://assetsprx.matchesfashion.com/img/product/1294005_1_zoom.jpg",
-item: "Sweater",
-price: 150,
-description: "Cozy Winter-Lizard Sweater"
-},
-{
-imageUrl: "https://i.rocdn.com/v2/50726711?w=1024&h=1024",
-item: "T-shirt",
-price: 25,
-description: "Green Double Winter-Lizard"
-}
-]
-
-// MERCH CARDS
 let buyId = 0;
 const makeMerchCards = (merchandise) => {
     let domString = "";
     for (let i = 0; i < merchandise.length; i++){
         merchItems[i].buyId = buyId++;
-        domString += `<div id="merchCard" class="card col-md-6 col-lg-3 m-3 card-separation text-body" style="width: 18rem;">`;
+        domString += `<div id="merchCard" class="card col-md-6 col-lg-3 m-3 p-2 card-separation text-body" style="width: 18rem;">`;
         domString +=    `<img src="${merchandise[i].imageUrl}" id="merchImage" class="card-img-top">`;
         domString +=    `<div class="card-body p-1 m-0">`;
         domString +=        `<h5 class="card-title text-center">${merchandise[i].item}</h5>`;
         domString +=        `<p class="card-text text-center">${merchandise[i].description}</p>`;
-        domString +=        `<p class="card-text text-center">$${merchandise[i].price}</p>`;
-        domString +=        `<footer>`;
-        domString +=        `<button id="${merchandise[i].buyId}" class="btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
-        domString +=        `</footer>`   
+        domString +=        `<p class="card-text text-center">$${merchandise[i].price}</p>`;  
         domString +=     `</div>`;
+        domString +=     `<footer>`;
+        domString +=     `<button id="${merchandise[i].buyId}" class="btn buy-btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
+        domString +=     `</footer>`;
         domString += `</div>`;
     }
     printToDom("store-container", domString);
-    for (const item of merchandise)
-        document.getElementById(item.buyId).addEventListener('click', buyNow);
-}
-
-const buyNow = (buy) => {
-    console.log(buyId);
+    classname = document.getElementsByClassName('buy-btn');
+    for (var i = 0; i < classname.length; i++) {
+        classname[i].addEventListener('click', buyItem);
+    }
 }
 
 // MERCH FILTER
@@ -308,15 +313,55 @@ const filterItems = (e) => {
 };
 
 
+// PRINT CART 
+const printCart = (cart) => {
+    let domString = "";
+    //console.log(cart);
+    domString += '<div id="cart" class="card mb-4">';
+    domString += '  <h1 class="card-header">SHOPPING CART</h1>';
+    domString += '  <div id="cart-items" class="d-flex flex-wrap justify-content-around p-2">';
+    for (let i = 0; i < cart.length; i++) {
+        domString += `      <div id="merchCard" class="card col-md-6 col-lg-3 m-3 p-2 card-separation text-body" style="width: 18rem;">`;
+        domString += `          <img src="${cart[i].imageUrl}" id="merchImage" class="card-img-top">`;
+        domString += '          <div class="card-body p-1 m-0">';
+        domString += `              <h5 class="card-title text-center">${cart[i].item}</h5>`;
+        domString += `              <p class="card-text text-center">${cart[i].description}</p>`;
+        domString += `              <p class="card-text text-center">${cart[i].price}</p>`;  
+        domString += '          </div>';
+        domString += '          <footer>';
+        domString += `              <button id="${cart[i].buyId}" class="btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
+        domString += '          </footer>'; 
+        domString += '      </div>';
+    }
+    domString += '  </div>';
+    domString += '</div>';
+    printToDom("cart-container", domString);
+};
+
+// BUY ITEM FUNCTION
+const buyItem = (e) => {
+    const itemId = e.target.id;
+    for( var i = 0; i < merchItems.length; i++){
+        loopId = `${merchItems[i].buyId}`;
+        if ( loopId === itemId ) {
+            cartArray.push(merchItems[i]);
+            } 
+        }
+    console.log(cartArray);    
+    printCart(cartArray);
+};
+
 // SUBSCRIPTION FORM FUNCTION
 const emailConfirm = () => {
+    let alertText = '';
     const textInput = document.getElementById('exampleInputEmail1')
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if (textInput.value.match(mailformat)) {
-        alert('You are subscribed!')
+        alertText = 'You are subscribed!';
     } else {
-        alert('Enter valid email address')
+        alertText = 'Enter valid email address';
     }
+document.getElementById("email-alert").innerHTML = alertText;
 };
 
 // ALBUM CARDS FUNCTION
@@ -349,16 +394,13 @@ const makeAlbumCards = () => {
   printToDom('album-container',domString);
 };
 
-
-   
-
 // INITIAL FUNCTION
 const init = () => {
 
     // LOCATION SWITCH STATEMENT
     switch (window.location.href) {
         case 'http://localhost:8080/index.html':
-            document.getElementById('emailButton').addEventListener('click', emailConfirm);
+            document.getElementById('email-button').addEventListener('click', emailConfirm );
             makeNewsCards();
             break; 
         case 'http://localhost:8080/members.html':

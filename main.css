@@ -82,3 +82,11 @@ form#subcription {
 #tourLocation {
   background-color: #8FDC97;
 }
+/* MERCH CART */
+#cart-container {
+  background-color: black;  
+}
+
+#cart {
+  background-color: #8FDC97; 
+}
