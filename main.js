@@ -203,8 +203,9 @@ const makeAlbumCards = () => {
     domString +=           `<img src="${albums[i].albumArt}" class="card card-img">`
     domString +=        '</div>'
     domString +=        '<div class="card col-md-8 bg-dark text-white">'
-    domString +=           `<h5 class= "card-header green-bg text-dark"><a href="${albums[i].soundLink}" class="text-decoration-none">${albums[i].title}</a></h5>`
+    domString +=           `<h5 class= "card-header green-bg text-dark">${albums[i].title}</h5>`
     domString +=           '<div class="card-body">'
+    domString +=           `<h6><a href="${albums[i].soundLink}" class="font-italic text-white">click here to listen</a></h6>`
     domString +=               `<h6 class="card-title">Release Date: ${albums[i].releaseDate}</h6>`
     domString +=               `<p class="card-text">Tracks: <div id"tracks-container"></div></p>`
     domString +=                    '<ol>'
