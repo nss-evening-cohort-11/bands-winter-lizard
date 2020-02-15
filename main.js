@@ -240,9 +240,7 @@ description: "Green Double Winter-Lizard"
 ]
 
 // MERCH CARDS
-
 let buyId = 0;
-
 const makeMerchCards = () => {
     let domString = "";
     for (let i = 0; i < merchItems.length; i++){
@@ -265,7 +263,7 @@ const makeMerchCards = () => {
 }
 
 
-const buyNow = () => {
+const buyNow = (buy) => {
     console.log(buyId);
 }
 
