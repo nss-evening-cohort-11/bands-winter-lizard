@@ -251,16 +251,16 @@ const makeMerchCards = () => {
     let domString = "";
     for (let i = 0; i < merchItems.length; i++){
         merchItems[i].buyId = num++;
-        domString += `<div id="merchCard" class="card col-md-6 col-lg-3 m-3 card-separation text-body" style="width: 18rem;">`;
+        domString += `<div id="merchCard" class="card col-md-6 col-lg-3 m-3 p-2 card-separation text-body" style="width: 18rem;">`;
         domString +=    `<img src="${merchItems[i].imageUrl}" id="merchImage" class="card-img-top">`;
         domString +=    `<div class="card-body p-1 m-0">`;
         domString +=        `<h5 class="card-title text-center">${merchItems[i].item}</h5>`;
         domString +=        `<p class="card-text text-center">${merchItems[i].description}</p>`;
-        domString +=        `<p class="card-text text-center">${merchItems[i].price}</p>`;
-        domString +=        `<footer>`;
-        domString +=        `<button id="${merchItems[i].buyId}" class="btn buy-btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
-        domString +=        `</footer>`   
+        domString +=        `<p class="card-text text-center">${merchItems[i].price}</p>`;  
         domString +=     `</div>`;
+        domString +=     `<footer>`;
+        domString +=     `<button id="${merchItems[i].buyId}" class="btn buy-btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
+        domString +=     `</footer>`;
         domString += `</div>`;
     }
     printToDom("store-container", domString);
@@ -276,9 +276,9 @@ const printCart = (cart) => {
     //console.log(cart);
     domString += '<div id="cart" class="card mb-4">';
     domString += '  <h1 class="card-header">SHOPPING CART</h1>';
-    domString += '  <div id="cart-items" class="d-flex flex-wrap justify-content-around">';
+    domString += '  <div id="cart-items" class="d-flex flex-wrap justify-content-around p-2">';
     for (let i = 0; i < cart.length; i++) {
-        domString += `      <div id="merchCard" class="card col-md-6 col-lg-3 m-3 card-separation text-body" style="width: 18rem;">`;
+        domString += `      <div id="merchCard" class="card col-md-6 col-lg-3 m-3 p-2 card-separation text-body" style="width: 18rem;">`;
         domString += `          <img src="${cart[i].imageUrl}" id="merchImage" class="card-img-top">`;
         domString += '          <div class="card-body p-1 m-0">';
         domString += `              <h5 class="card-title text-center">${cart[i].item}</h5>`;
@@ -306,19 +306,6 @@ const buyItem = (e) => {
         }
     console.log(cartArray);    
     printCart(cartArray);
-};
-
-// EXPEL STUDENT
-const expelStudent = (e) => {
-    const studentId = e.target.id;
-    for( var i = 0; i < studentArray.length; i++){ 
-        if ( studentArray[i].id === studentId ) {
-            const expelled = studentArray.splice(i, 1);
-            expelledStudents.push(expelled[0]);
-        }
-     }
-     sortStudentsByName(studentArray);
-     expelledCardBuider(expelledStudents);
 };
 
 // SUBSCRIPTION FORM FUNCTION
