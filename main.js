@@ -170,6 +170,13 @@ const makeBioCards = () => {
 };
 
 
+// BUY ITEM FUNCTION
+const buyItem = () => {
+
+    makeMerchCards();
+    printCart();
+};
+
 // SUBSCRIPTION FORM FUNCTION
 const emailConfirm = () => {
     const textInput = document.getElementById('exampleInputEmail1')
