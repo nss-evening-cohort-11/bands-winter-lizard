@@ -276,7 +276,7 @@ const filterItems = (e) => {
         for (let i = 0; i < merchItems.length; i++){
             if(merchItems[i].price <= 5) {
                if(buttonId === "under-5"){
-                merchCost.push(merchItems[i]); 
+                    merchCost.push(merchItems[i]); 
                }; 
             } 
             else if (merchItems[i].price >= 6 && merchItems[i].price <= 10) {
@@ -285,8 +285,8 @@ const filterItems = (e) => {
                 }; 
             } 
             else if (merchItems[i].price >= 11)
-            if(buttonId === "over-10"){
-                merchCost.push(merchItems[i]); 
+                if(buttonId === "over-10"){
+                    merchCost.push(merchItems[i]); 
             };
         }
         makeMerchCards(merchCost);
