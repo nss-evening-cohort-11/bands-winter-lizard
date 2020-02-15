@@ -55,6 +55,8 @@ tourDates = [{
 ]
 
 
+
+
 const makeTourCards = () => {
     let Domstring = '';
 for(let i = 0; i < tourDates.length; i++) {
@@ -226,12 +228,9 @@ const makeAlbumCards = () => {
   printToDom('album-container',domString);
 };
 
-// EVENTS
-const events = () => {
-    document.getElementById('emailButton').addEventListener('click', emailConfirm )
-};
-
-    
+//element
+document.getElementById('cat').addEventListener('click',buttonClick);
+   
 // INITIAL FUNCTION
 const init = () => {
 
