@@ -78,4 +78,11 @@ form#subcription {
     margin-bottom: 30px;
 }
 
-/* MERCH CARDS */
+/* MERCH CART */
+#cart-container {
+  background-color: black;  
+}
+
+#cart {
+  background-color: #8FDC97; 
+}
