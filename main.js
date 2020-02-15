@@ -173,7 +173,7 @@ const merchItems = [
     {
     imageUrl: "https://cdn.designbyhumans.com/product_images/p/53940.f56.9c492S7ay1Cm2MjUAAA-650x650-b-p.jpg",
     item: "Sticker",
-    price: 5,
+    price: 10,
     description: "Green Winter-Lizard Sticker"
     },    
     {
@@ -261,11 +261,11 @@ const makeBioCards = () => {
 
 
 // MERCH CARDS
-let buyId = 0;
 const makeMerchCards = (merchandise) => {
+    let num = 0;
     let domString = "";
     for (let i = 0; i < merchandise.length; i++){
-        merchItems[i].buyId = buyId++;
+        merchItems[i].buyId = num++;
         domString += `<div id="merchCard" class="card col-md-6 col-lg-3 m-3 p-2 bg-dark card-separation text-body" style="width: 18rem;">`;
         domString +=    `<img src="${merchandise[i].imageUrl}" id="merchImage" class="card-img-top">`;
         domString +=    `<div class="card-body p-1 m-0">`;
@@ -303,9 +303,10 @@ const filterItems = (e) => {
                     merchCost.push(merchItems[i]); 
                 }; 
             } 
-            else if (merchItems[i].price >= 11)
+            else if (merchItems[i].price >= 11) {
                 if(buttonId === "over-10"){
                     merchCost.push(merchItems[i]); 
+                }   
             };
         }
         makeMerchCards(merchCost);
