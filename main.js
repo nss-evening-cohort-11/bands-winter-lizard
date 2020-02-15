@@ -173,7 +173,7 @@ const merchItems = [
 imageUrl: "https://m.media-amazon.com/images/I/61cph-9AgVL._AC_UL320_.jpg",
 item: "T-shirt",
 price: "$15",
-description: "Yellow Winter-Lizard"
+description: "Yellow Winter-Lizard"  
 },
 {
 imageUrl: "https://images.cloudpuble.com/thumb/1010x1010/129.front/White.0/8f6407fde9be360d44b64969e3fb9744/a7/2019/02/21/MXPP-5c6f500fd9218.png",
@@ -200,7 +200,7 @@ price: "$15",
 description: "Keep your lizard cozy this winter!"
 },
 {
-imageUrl: "https://images-na.ssl-images-amazon.com/images/I/61vGV%2BALNlL._AC_UL1000_.jpg",
+imageUrl: "https://i.ebayimg.com/images/g/ZRsAAOSwUrZd6acf/s-l640.jpg",
 item: "Socks",
 price: "$10",
 description: "Cozy Socks"
@@ -226,25 +226,34 @@ description: "Green Double Winter-Lizard"
 ]
 
 // MERCH CARDS
+
+let buyId = 0;
 const makeMerchCards = () => {
     let domString = "";
     for (let i = 0; i < merchItems.length; i++){
-        domString += `<div class="card col-md-6 col-lg-4 card-separation text-body" style="width: 18rem;">`;
-        domString +=    `<img src="${merchItems[i].imageUrl}" class="card-img-top" alt="...">`;
-        domString +=    `<div class="card-body">`;
+        merchItems[i].buyId = buyId++;
+        domString += `<div id="merchCard" class="card col-md-6 col-lg-3 m-3 card-separation text-body" style="width: 18rem;">`;
+        domString +=    `<img src="${merchItems[i].imageUrl}" id="merchImage" class="card-img-top">`;
+        domString +=    `<div class="card-body p-1 m-0">`;
         domString +=        `<h5 class="card-title text-center">${merchItems[i].item}</h5>`;
         domString +=        `<p class="card-text text-center">${merchItems[i].description}</p>`;
         domString +=        `<p class="card-text text-center">${merchItems[i].price}</p>`;
-        domString +=        `<button class="buyBtn btn btn-dark">BUY</button>`;
+        domString +=        `<footer>`;
+        domString +=        `<button id="${merchItems[i].buyId}" class="btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
+        domString +=        `</footer>`   
         domString +=     `</div>`;
         domString += `</div>`;
     }
     printToDom("store-container", domString);
+    for (const item of merchItems)
+        document.getElementById(item.buyId).addEventListener('click', buyNow);
 }
+
 
 const buyNow = () => {
     console.log("buttonArray");
 }
+
 
 // SUBSCRIPTION FORM FUNCTION
 const emailConfirm = () => {
@@ -273,7 +282,7 @@ const init = () => {
             break;    
         case 'http://localhost:8080/merch.html':
             makeMerchCards();
-            document.getElementByClass('buyBtn btn btn-dark').addEventListener('click', buyNow);
+            
             break; 
         case 'http://localhost:8080/music.html':
             console.log('music');
