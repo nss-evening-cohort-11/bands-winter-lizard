@@ -3,16 +3,26 @@ body {
     color: white;
 }
 
+/* NAVBAR */
 .logo {
-  width: 75px;
-  height: 75px;
+  width: 90px;
+  height: 90px;
   margin: 0px;
+  padding-top: 5px;
+}
+
+#band-name {
+  font-family: 'Kaushan Script', cursive;
+  color: black;
+  margin: 0px;
+  padding-left: 20px;
+  padding-top: -8px;
 }
 
 /* PHOTO CAROUSEL */
-
 .carousel-inner img {
-  height: 300px;
+  min-height: 300px;
+  max-height: 600px;
 }
 
 .carousel-item {
@@ -20,7 +30,7 @@ body {
 }
 
 #myCarousel {
-  width: 500px;
+  width: 75%;
 }
 
 .carousel-caption {
@@ -29,7 +39,6 @@ body {
 }
 
 /* SUBSCRIPTION FORM */
-
 form#subcription {
     height: 42px;
 }
@@ -65,8 +74,8 @@ form#subcription {
 .tour-card-header {
   background-color: darkgray;
 }
-/* NEWS CARDS */
 
+/* NEWS CARDS */
 #newsInfoCards {
   background-color: #8FDC97;
   margin: 25px;
@@ -91,6 +100,7 @@ form#subcription {
 #tourLocation {
   background-color: #8FDC97;
 }
+
 /* MERCH CART */
 #cart-container {
   background-color: black;  
@@ -101,18 +111,26 @@ form#subcription {
 }
 
 /* MERCH CARDS */
-#buttonFooter button{
+#buttonFooter button {
   border:  #8FDC97 solid 2px;
 }
+
+.filter-btn {
+  border:  #8FDC97 solid 2px;
+}
+
+#under-5 {
+  width: 250px;
+}
+
+#between5-10 {
+  width: 250px;
+}
+
+#over-10 {
+  width: 250px;
+}
+
 #all {
-  border:  #8FDC97 solid 2px;
-} 
-#under-5{
-  border:  #8FDC97 solid 2px;
-}
-#between5-10{
-  border:  #8FDC97 solid 2px;
-}
-#over-10{
-  border:  #8FDC97 solid 2px;
+  width: 250px;
 }

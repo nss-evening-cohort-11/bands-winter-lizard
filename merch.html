@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./main.css">
   <title>WinterLizard : Merch</title>
 </head>
@@ -12,8 +13,9 @@
   <header>
   <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <a class="navbar-brand mr-auto" href="./index.html">
+      <a class="navbar-brand d-flex flex-nowrap" href="./index.html">
         <img class="logo" src="https://www.metal-archives.com/images/3/5/4/0/3540369098_logo.jpg?1946" width="30" height="30" alt="">
+        <h1 id="band-name">Winter </br> Lizard</h1>
       </a>
       <div class="ml-md-auto" id="navbarNav">
         <ul class="navbar-nav">
@@ -40,11 +42,11 @@
 
   <!-- MERCH -->
     <h1 class="text-center m-4 p-3">MERCH</h1>
-    <div class="d-flex justify-content-around"  aria-label="Basic example">
-      <button type="button" id="under-5" class="btn btn-secondary w-25 m-3">UNDER $5</button>
-      <button type="button" id="between5-10" class="btn btn-secondary w-25 m-3">$6 - $10</button>
-      <button type="button" id="over-10" class="btn btn-secondary w-25 m-3"> OVER $10</button>
-      <button type="button" id="all" class="btn btn-secondary w-25 m-3">ALL</button>
+    <div class="d-flex flex-wrap justify-content-around"  aria-label="Basic example">
+      <button type="button" id="under-5" class="btn btn-secondary filter-btn mb-3 mr-3 ml-3 mt-0">UNDER $5</button>
+      <button type="button" id="between5-10" class="btn btn-secondary filter-btn mb-3 mr-3 ml-3 mt-0">$6 - $10</button>
+      <button type="button" id="over-10" class="btn btn-secondary filter-btn mb-3 mr-3 ml-3 mt-0"> OVER $10</button>
+      <button type="button" id="all" class="btn btn-secondary filter-btn mb-3 mr-3 ml-3 mt-0">ALL</button>
     </div>
     <div class="d-flex flex-wrap justify-content-around" id="store-container"></div>
 <!-- MERCH STORE -->
