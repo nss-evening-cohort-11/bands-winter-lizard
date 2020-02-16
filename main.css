@@ -66,15 +66,6 @@ form#subcription {
   background-color: #8FDC97;
 }
 
-.tour-card {
-  display: flex;
-  margin: 8px;
-}
-
-.tour-card-header {
-  background-color: darkgray;
-}
-
 /* NEWS CARDS */
 #newsInfoCards {
   background-color: #8FDC97;
@@ -99,7 +90,19 @@ form#subcription {
 /* TOUR CARDS */
 #tourLocation {
   background-color: #8FDC97;
+  color: black;
 }
+
+.tour-card {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.tour-card-header {
+  background-color: darkgray;
+}
+
 
 /* MERCH CART */
 #cart-container {

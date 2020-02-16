@@ -19,60 +19,67 @@ const albums = [
 ]
 
 // TOUR ARRAY
-tourDates = [{
+tourDates = [
+    {
     date: "02/28/2020",
     city: "Sacramento",
     state: "CA",
-    venue: "The Dungeon"},
-
-    {date: "03/01/2020",
+    venue: "The Dungeon"
+    },
+    {
+        date: "03/01/2020",
     city: "San Francisco",
     state: "CA",
     venue: "The Devils Playground",
     },
-
-    {date: "03/03/2020",
+    {
+    date: "03/03/2020",
     city: "San Diego",
     state: "CA",
     venue: "The Labyrinth",
     },
-
-    {date: "03/05/2020",
+    {
+    date: "03/05/2020",
     city: "Los Angeles",
     state: "CA",
     venue: "Skid Row",
     },
-
-    {date: "03/05/2020",
+    {
+    date: "03/05/2020",
     city: "Las Vegas",
     state: "NV",
     venue: "Sin City",
     },
-
-    {date: "03/09/2020",
+    {
+    date: "03/09/2020",
     city: "Reno",
     state: "NV",
     venue: "The Bunny Ranch",
     }
-]
+];
 
 
 
 
 const makeTourCards = () => {
     let domString = '';
-for(let i = 0; i < tourDates.length; i++) {
-    domString += `<div class="tour-card w-75 mx-auto mb-4">`;
-    domString +=    `<h5 id="tourLocation" class="tour-card-header d-flex align-items-center card-header text-body">${tourDates[i].date}</h5>`;
-    domString +=    '<div class="card-body bg-dark">';
-    domString +=        `<h5 class="card-title text-uppercase">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
-    domString +=        `<p class="card-text text-uppercase ml-4">${tourDates[i].venue}</p>`;
-    domString +=        '<div class="button-soldout d-flex flex-row-reverse">';
-    domString +=            '<button type="button" class="btn btn-lg btn-secondary buy-btn text-uppercase border-white" title="SOLD OUT">Buy Tickets</button>';
-    domString +=        '</div>';
-    domString +=    '</div>';
-    domString +=  '</div>';
-
+for(let i = 0; i < tourDates.length; i++) { 
+    domString += '<div class="card d-flex justify-content-center bg-dark ml-5 mr-5 mt-4 mb-4">';
+    domString += '  <div class="row no-gutters">';
+    domString += ' <div id="tourLocation" class="rounded-left col-md-2 d-flex align-items-center justify-content-center text-center">';
+    domString += `   <h5 class="p-3 m-0">${tourDates[i].date}</h5>`;
+    domString += ' </div>';
+    domString += ' <div class="card col-md-10 bg-dark text-white d-flex flex-row flex-wrap">';
+    domString += '   <div class="card-body w-75">';
+    domString += `     <h5 class="text-center">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
+    domString += `     <p class="card-text text-center">${tourDates[i].venue}</p>`;
+    domString += '   </div>';
+    domString += '   <div class="card-body d-flex justify-content-center">';
+    domString += '     <button type="button" class="btn btn-lg btn-secondary buy-btn text-uppercase border-white" title="SOLD OUT">Buy Tickets</button>';
+    domString += '   </div>';    
+    domString += ' </div>';
+    domString += '</div>';
+    domString += '</div>';
 }
 printToDom('tour-cards',domString);
 
