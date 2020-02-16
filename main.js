@@ -321,7 +321,7 @@ const printCart = (cart) => {
     domString += '  <h1 class="card-header">SHOPPING CART</h1>';
     domString += '  <div id="cart-items" class="d-flex flex-wrap justify-content-around p-2">';
     for (let i = 0; i < cart.length; i++) {
-        domString += `      <div id="merchCard" class="card col-md-6 col-lg-3 m-3 p-2 card-separation text-body" style="width: 18rem;">`;
+        domString += `      <div class="card col-md-6 col-lg-3 m-3 p-2 card-separation text-body" style="width: 18rem;">`;
         domString += `          <img src="${cart[i].imageUrl}" id="merchImage" class="card-img-top">`;
         domString += '          <div class="card-body p-1 m-0">';
         domString += `              <h5 class="card-title text-center">${cart[i].item}</h5>`;
@@ -329,13 +329,18 @@ const printCart = (cart) => {
         domString += `              <p class="card-text text-center">$${cart[i].price}</p>`;  
         domString += '          </div>';
         domString += '          <footer>';
-        domString += `              <button id="${cart[i].buyId}" class="btn btn-secondary btn-lg w-100 align-end">BUY</button>`;
+        domString += `              <button id="${cart[i].removeId}" class="btn remove-btn btn-dark btn-lg w-100 align-end">REMOVE</button>`;
         domString += '          </footer>'; 
         domString += '      </div>';
     }
     domString += '  </div>';
     domString += '</div>';
     printToDom("cart-container", domString);
+
+    classRemoveButton = document.getElementsByClassName('remove-btn');
+    for (var i = 0; i < classRemoveButton.length; i++) {
+        classRemoveButton[i].addEventListener('click', removeItem);
+    };
 };
 
 // BUY ITEM FUNCTION
@@ -344,11 +349,30 @@ const buyItem = (e) => {
     for( var i = 0; i < merchItems.length; i++){
         loopId = `${merchItems[i].buyId}`;
         if ( loopId === itemId ) {
-            cartArray.push(merchItems[i]);
+            const item = merchItems[i];
+            cartArray.push({
+                imageUrl: item.imageUrl,
+                item: item.item,
+                description: item.description,
+                price: item.price,
+                removeId: Math.random().toString(32).replace('0.', '')
+                });
             } 
-        }
+        }   
     printCart(cartArray);
 };
+
+// REMOVE ITEM FUNCTION
+const removeItem = (e) => {
+    const itemId = e.target.id;
+    for( let i = 0; i < cartArray.length; i++){
+        if (cartArray[i].removeId === itemId ) {
+            cartArray.splice(i, 1);
+            break;
+        };
+        }   
+    printCart(cartArray);
+  };
 
 // SUBSCRIPTION FORM FUNCTION
 const emailConfirm = () => {
