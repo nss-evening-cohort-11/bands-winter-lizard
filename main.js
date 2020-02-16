@@ -317,7 +317,6 @@ const filterItems = (e) => {
 // PRINT CART 
 const printCart = (cart) => {
     let domString = "";
-    //console.log(cart);
     domString += '<div id="cart" class="card mb-4">';
     domString += '  <h1 class="card-header">SHOPPING CART</h1>';
     domString += '  <div id="cart-items" class="d-flex flex-wrap justify-content-around p-2">';
@@ -348,7 +347,6 @@ const buyItem = (e) => {
             cartArray.push(merchItems[i]);
             } 
         }
-    console.log(cartArray);    
     printCart(cartArray);
 };
 
@@ -358,9 +356,9 @@ const emailConfirm = () => {
     const textInput = document.getElementById('exampleInputEmail1')
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if (textInput.value.match(mailformat)) {
-        alertText = 'You are subscribed!';
+        alertText = `<span id="valid-input">You are now subscribed!</span>`;
     } else {
-        alertText = 'Enter valid email address';
+        alertText = '<span id="invalid-input">Enter valid email address</span>';
     }
 document.getElementById("email-alert").innerHTML = alertText;
 };
@@ -403,15 +401,8 @@ const init = () => {
     // LOCATION SWITCH STATEMENT
     switch (window.location.href) {
         case 'http://localhost:8080/index.html':
-            document.getElementById('email-button').addEventListener('click', enterKey );
-            const input = document.getElementById('exampleInputEmail1');
-            input.addEventListener('keyup', function(event) {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                document.getElementById('email-button').click();
-                }
-            });
             makeNewsCards();
+            document.getElementById('email-button').addEventListener('click', emailConfirm );
             break; 
         case 'http://localhost:8080/members.html':
             makeBioCards();

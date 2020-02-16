@@ -38,9 +38,14 @@ form#subcription {
     margin-right: 10px;
 }
 
-#email-alert {
+#invalid-input {
   color: red;
 }
+
+#valid-input {
+  color:rgb(139, 204, 41);
+}
+
 
 /* ALBUMS */
 .album-art {
