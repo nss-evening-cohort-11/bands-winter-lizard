@@ -367,6 +367,8 @@ const removeItem = (e) => {
     const itemId = e.target.id;
     for( let i = 0; i < cartArray.length; i++){
         if (cartArray[i].removeId === itemId ) {
+            cartArray.splice(i, 1);
+            break;
         };
         }   
     printCart(cartArray);
