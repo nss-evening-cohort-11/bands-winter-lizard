@@ -320,7 +320,6 @@ const printCart = (cart) => {
     domString += '<div id="cart" class="card mb-4">';
     domString += '  <h1 class="card-header">SHOPPING CART</h1>';
     domString += '  <div id="cart-items" class="d-flex flex-wrap justify-content-around p-2">';
-    console.log('cart', cart);
     for (let i = 0; i < cart.length; i++) {
         domString += `      <div class="card col-md-6 col-lg-3 m-3 p-2 card-separation text-body" style="width: 18rem;">`;
         domString += `          <img src="${cart[i].imageUrl}" id="merchImage" class="card-img-top">`;
@@ -351,7 +350,6 @@ const buyItem = (e) => {
         loopId = `${merchItems[i].buyId}`;
         if ( loopId === itemId ) {
             const item = merchItems[i];
-            console.log(item.removeId, 'adding');
             cartArray.push({
                 imageUrl: item.imageUrl,
                 item: item.item,
@@ -367,14 +365,8 @@ const buyItem = (e) => {
 // REMOVE ITEM FUNCTION
 const removeItem = (e) => {
     const itemId = e.target.id;
-    console.log('removing:', itemId);
     for( let i = 0; i < cartArray.length; i++){
-        console.log('where is i', i);
-        console.log(`${itemId} ===  ${cartArray[i].removeId}`);
         if (cartArray[i].removeId === itemId ) {
-            console.log('found a match');
-            cartArray.splice(i, 1);
-            break;
         };
         }   
     printCart(cartArray);
