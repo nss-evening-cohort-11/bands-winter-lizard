@@ -3,16 +3,26 @@ body {
     color: white;
 }
 
+/* NAVBAR */
 .logo {
-  width: 75px;
-  height: 75px;
+  width: 90px;
+  height: 90px;
   margin: 0px;
+  padding-top: 5px;
+}
+
+#band-name {
+  font-family: 'Kaushan Script', cursive;
+  color: black;
+  margin: 0px;
+  padding-left: 20px;
+  padding-top: -8px;
 }
 
 /* PHOTO CAROUSEL */
-
 .carousel-inner img {
-  height: 300px;
+  min-height: 300px;
+  max-height: 600px;
 }
 
 .carousel-item {
@@ -20,7 +30,8 @@ body {
 }
 
 #myCarousel {
-  width: 500px;
+  min-width: 300px;
+  max-width: 850px;
 }
 
 .carousel-caption {
@@ -28,36 +39,7 @@ body {
   padding: 5px;
 }
 
-/* SUBSCRIPTION FORM */
-
-form#subcription {
-    height: 42px;
-}
-
-#exampleInputEmail1 {
-    margin-right: 10px;
-}
-
-/* ALBUMS */
-.album-art {
-  width: 200px;
-  height: 200px;
-}
-
-.green-bg {
-  background-color: #8FDC97;
-}
-
-.tour-card {
-  display: flex;
-  margin: 8px;
-}
-
-.tour-card-header {
-  background-color: darkgray;
-}
 /* NEWS CARDS */
-
 #newsInfoCards {
   background-color: #8FDC97;
   margin: 25px;
@@ -73,15 +55,34 @@ form#subcription {
   margin-top: 50px;
 }
 
-/* MEMBER BIOS CARDS */
-.bio-container {
-    margin-bottom: 30px;
+/* SUBSCRIPTION FORM */
+form#subcription {
+    height: 42px;
 }
 
-/* TOUR CARDS */
-#tourLocation {
-  background-color: #8FDC97;
+#exampleInputEmail1 {
+    margin-right: 10px;
 }
+
+#invalid-input {
+  color: red;
+}
+
+#valid-input {
+  color:rgb(139, 204, 41);
+}
+
+#email-alert {
+  height:20px; 
+  width:100%; 
+  clear:both;
+}
+
+/* MEMBER BIOS CARDS */
+.bio-container {
+  margin-bottom: 30px;
+}
+
 /* MERCH CART */
 #cart-container {
   background-color: black;  
@@ -92,18 +93,52 @@ form#subcription {
 }
 
 /* MERCH CARDS */
-#buttonFooter button{
+#buttonFooter button {
   border:  #8FDC97 solid 2px;
 }
+
+.filter-btn {
+  border:  #8FDC97 solid 2px;
+}
+
+#under-5 {
+  width: 250px;
+}
+
+#between5-10 {
+  width: 250px;
+}
+
+#over-10 {
+  width: 250px;
+}
+
 #all {
-  border:  #8FDC97 solid 2px;
-} 
-#under-5{
-  border:  #8FDC97 solid 2px;
+  width: 250px;
 }
-#between5-10{
-  border:  #8FDC97 solid 2px;
+
+/* ALBUMS */
+.album-art {
+  width: 200px;
+  height: 200px;
 }
-#over-10{
-  border:  #8FDC97 solid 2px;
+
+.green-bg {
+  background-color: #8FDC97;
+}
+
+/* TOUR CARDS */
+#tourLocation {
+  background-color: #8FDC97;
+  color: black;
+}
+
+.tour-card {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.tour-card-header {
+  background-color: darkgray;
 }

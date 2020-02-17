@@ -1,93 +1,5 @@
 /*--- OBJECT ARRAYS ---*/
 
-// ALBUMS ARRAY
-const albums = [
-    {
-        title: "WINTER-LIZARD EP",
-        albumArt: "https://i1.sndcdn.com/artworks-000053909121-6qx5rc-t500x500.jpg",
-        soundLink: "https://soundcloud.com/winterlizard/sets/winterlizard-ep",
-        releaseDate: "August 13, 2013",
-        tracks: ["EROSION OF MY WILL", "MASSACRE OF INQUISITION", "THE ABYSS", "FATAL EXISTENCE"]   
-    },
-    {
-        title: "ELECTRIC SHELL - DAVID GARDNER & JON BROWN",
-        albumArt: "https://scontent-den4-1.xx.fbcdn.net/v/t31.0-8/p960x960/13613698_122845534813253_8789548996796216390_o.jpg?_nc_cat=108&_nc_ohc=Gl8ADuE6PtkAX-Ab3dW&_nc_ht=scontent-den4-1.xx&_nc_tp=6&oh=79f268722c05f17d3cb21f3ea9c2650e&oe=5EBD5892",
-        soundLink: "https://www.youtube.com/channel/UCaQVI-DPjGK1jjQvwH2MkpA/videos",
-        releaseDate: "July 04, 2016",
-        tracks: ["NEPTUNE 8", "SKY FLASH", "PREMEDITATION", "BED OF BROKEN GLASS", "LASERS SPLIT BY RAZORS"]   
-    }
-]
-
-// TOUR ARRAY
-tourDates = [{
-    date: "02/28/2020",
-    city: "Sacramento",
-    state: "CA",
-    venue: "The Dungeon"},
-
-    {date: "03/01/2020",
-    city: "San Francisco",
-    state: "CA",
-    venue: "The Devils Playground",
-    },
-
-    {date: "03/03/2020",
-    city: "San Diego",
-    state: "CA",
-    venue: "The Labyrinth",
-    },
-
-    {date: "03/05/2020",
-    city: "Los Angeles",
-    state: "CA",
-    venue: "Skid Row",
-    },
-
-    {date: "03/05/2020",
-    city: "Las Vegas",
-    state: "NV",
-    venue: "Sin City",
-    },
-
-    {date: "03/09/2020",
-    city: "Reno",
-    state: "NV",
-    venue: "The Bunny Ranch",
-    }
-]
-
-
-
-
-const makeTourCards = () => {
-    let domString = '';
-for(let i = 0; i < tourDates.length; i++) {
-    domString += `<div class="tour-card w-75 mx-auto mb-4">`;
-    domString +=    `<h5 id="tourLocation" class="tour-card-header d-flex align-items-center card-header text-body">${tourDates[i].date}</h5>`;
-    domString +=    '<div class="card-body bg-dark">';
-    domString +=        `<h5 class="card-title text-uppercase">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
-    domString +=        `<p class="card-text text-uppercase ml-4">${tourDates[i].venue}</p>`;
-    domString +=        '<div class="button-soldout d-flex flex-row-reverse">';
-    domString +=            '<button type="button" class="btn btn-lg btn-secondary buy-btn text-uppercase border-white" title="SOLD OUT">Buy Tickets</button>';
-    domString +=        '</div>';
-    domString +=    '</div>';
-    domString +=  '</div>';
-
-}
-printToDom('tour-cards',domString);
-
-let assignButton = document.getElementsByClassName('buy-btn');
-for (var i=0; i < assignButton.length; i++) {
-    assignButton[i].addEventListener('click', soldOutAlert);
-};
-
-}
-
-const soldOutAlert = () => {
-        alert('SOLD OUT')
-};
-
-
 // NEWS ARRAY
 const newsArrInfo = [
     {
@@ -211,6 +123,64 @@ const merchItems = [
 // CART ARRAY
 const cartArray = [];
 
+// ALBUMS ARRAY
+const albums = [
+    {
+        title: "WINTER-LIZARD EP",
+        albumArt: "https://i1.sndcdn.com/artworks-000053909121-6qx5rc-t500x500.jpg",
+        soundLink: "https://soundcloud.com/winterlizard/sets/winterlizard-ep",
+        releaseDate: "August 13, 2013",
+        tracks: ["EROSION OF MY WILL", "MASSACRE OF INQUISITION", "THE ABYSS", "FATAL EXISTENCE"]   
+    },
+    {
+        title: "ELECTRIC SHELL - DAVID GARDNER & JON BROWN",
+        albumArt: "https://scontent-den4-1.xx.fbcdn.net/v/t31.0-8/p960x960/13613698_122845534813253_8789548996796216390_o.jpg?_nc_cat=108&_nc_ohc=Gl8ADuE6PtkAX-Ab3dW&_nc_ht=scontent-den4-1.xx&_nc_tp=6&oh=79f268722c05f17d3cb21f3ea9c2650e&oe=5EBD5892",
+        soundLink: "https://www.youtube.com/channel/UCaQVI-DPjGK1jjQvwH2MkpA/videos",
+        releaseDate: "July 04, 2016",
+        tracks: ["NEPTUNE 8", "SKY FLASH", "PREMEDITATION", "BED OF BROKEN GLASS", "LASERS SPLIT BY RAZORS"]   
+    }
+]
+
+// TOUR ARRAY
+tourDates = [
+    {
+    date: "02/28/2020",
+    city: "Sacramento",
+    state: "CA",
+    venue: "The Dungeon"
+    },
+    {
+        date: "03/01/2020",
+    city: "San Francisco",
+    state: "CA",
+    venue: "The Devils Playground",
+    },
+    {
+    date: "03/03/2020",
+    city: "San Diego",
+    state: "CA",
+    venue: "The Labyrinth",
+    },
+    {
+    date: "03/05/2020",
+    city: "Los Angeles",
+    state: "CA",
+    venue: "Skid Row",
+    },
+    {
+    date: "03/05/2020",
+    city: "Las Vegas",
+    state: "NV",
+    venue: "Sin City",
+    },
+    {
+    date: "03/09/2020",
+    city: "Reno",
+    state: "NV",
+    venue: "The Bunny Ranch",
+    }
+];
+
 /*--- FUNCTIONS ---*/
 
 // PRINT TO DOM
@@ -237,6 +207,19 @@ const makeNewsCards = () => {
     printToDom("newsCards", domString);
 };
 
+// SUBSCRIPTION FORM FUNCTION
+const emailConfirm = () => {
+    let alertText = '';
+    const textInput = document.getElementById('exampleInputEmail1')
+    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if (textInput.value.match(mailformat)) {
+        alertText = `<span id="valid-input">You are now subscribed!</span>`;
+    } else {
+        alertText = '<span id="invalid-input">Enter valid email address</span>';
+    }
+document.getElementById("email-alert").innerHTML = alertText;
+};
+
 // MAKE MEMBER BIO CARDS
 const makeBioCards = () => {
     let domString = '';
@@ -258,7 +241,6 @@ const makeBioCards = () => {
     }
     printToDom('bio-container', domString);
 };
-
 
 // MERCH CARDS
 const makeMerchCards = (merchandise) => {
@@ -313,7 +295,6 @@ const filterItems = (e) => {
     }
 };
 
-
 // PRINT CART 
 const printCart = (cart) => {
     let domString = "";
@@ -356,7 +337,7 @@ const buyItem = (e) => {
                 description: item.description,
                 price: item.price,
                 removeId: Math.random().toString(32).replace('0.', '')
-            });
+                });
             } 
         }   
     printCart(cartArray);
@@ -373,19 +354,6 @@ const removeItem = (e) => {
         }   
     printCart(cartArray);
   };
-
-// SUBSCRIPTION FORM FUNCTION
-const emailConfirm = () => {
-    let alertText = '';
-    const textInput = document.getElementById('exampleInputEmail1')
-    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if (textInput.value.match(mailformat)) {
-        alertText = 'You are subscribed!';
-    } else {
-        alertText = 'Enter valid email address';
-    }
-document.getElementById("email-alert").innerHTML = alertText;
-};
 
 // ALBUM CARDS FUNCTION
 const makeAlbumCards = () => {
@@ -417,14 +385,49 @@ const makeAlbumCards = () => {
   printToDom('album-container',domString);
 };
 
+// MAKE TOUR CARDS
+const makeTourCards = () => {
+    let domString = '';
+for(let i = 0; i < tourDates.length; i++) { 
+    domString += '<div class="card d-flex justify-content-center bg-dark ml-5 mr-5 mt-4 mb-4">';
+    domString += '  <div class="row no-gutters">';
+    domString += ' <div id="tourLocation" class="rounded-sm col-md-2 d-flex align-items-center justify-content-center text-center">';
+    domString += `   <h5 class="p-3 m-0">${tourDates[i].date}</h5>`;
+    domString += ' </div>';
+    domString += ' <div class="card col-md-10 bg-dark text-white d-flex flex-row flex-wrap">';
+    domString += '   <div class="card-body w-75">';
+    domString += `     <h5 class="text-center">${tourDates[i].city}, ${tourDates[i].state}</h5>`;
+    domString += `     <p class="card-text text-center">${tourDates[i].venue}</p>`;
+    domString += '   </div>';
+    domString += '   <div class="card-body d-flex justify-content-center">';
+    domString += '     <button type="button" class="btn btn-lg btn-secondary buy-btn text-uppercase border-white" title="SOLD OUT">Buy Tickets</button>';
+    domString += '   </div>';    
+    domString += ' </div>';
+    domString += '</div>';
+    domString += '</div>';
+}
+printToDom('tour-cards',domString);
+
+let assignButton = document.getElementsByClassName('buy-btn');
+for (var i=0; i < assignButton.length; i++) {
+    assignButton[i].addEventListener('click', soldOutAlert);
+};
+
+}
+
+// TOUR BUTTON FUNCTION
+const soldOutAlert = () => {
+        alert('SOLD OUT')
+};
+
 // INITIAL FUNCTION
 const init = () => {
 
     // LOCATION SWITCH STATEMENT
     switch (window.location.href) {
         case 'http://localhost:8080/index.html':
-            document.getElementById('email-button').addEventListener('click', emailConfirm );
             makeNewsCards();
+            document.getElementById('email-button').addEventListener('click', emailConfirm );
             break; 
         case 'http://localhost:8080/members.html':
             makeBioCards();

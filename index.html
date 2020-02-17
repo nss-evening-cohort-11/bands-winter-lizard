@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
     <title>WinterLizard</title>
 </head>
@@ -13,8 +14,9 @@
 
   <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <a class="navbar-brand mr-auto" href="./index.html">
+      <a class="navbar-brand d-flex flex-nowrap" href="./index.html">
         <img class="logo" src="https://www.metal-archives.com/images/3/5/4/0/3540369098_logo.jpg?1946" width="30" height="30" alt="">
+        <h1 id="band-name">Winter </br> Lizard</h1>
       </a>
       <div class="ml-md-auto" id="navbarNav">
         <ul class="navbar-nav">
@@ -40,8 +42,8 @@
   
 
 <!-- PHOTO CAROUSEL -->
-  <div class="d-flex justify-content-center m-4">
-    <div id="myCarousel" class="carousel slide d-flex" data-ride="carousel">
+  <div class="d-flex justify-content-center m-4 md-2">
+    <div id="myCarousel" class="carousel slide d-flex md-2 carousel-fade" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="1" class="active"></li>
@@ -52,7 +54,7 @@
         <div class="carousel-item active">
           <img class="img-responsive center-block" src="https://scontent-dfw5-2.xx.fbcdn.net/v/t31.0-8/1496131_616291135073333_1835615982_o.jpg?_nc_cat=108&_nc_ohc=b0RiJoZalbcAX_RDkfR&_nc_ht=scontent-dfw5-2.xx&oh=3e6f0947d760ccaae4727df87633f3d7&oe=5EB541A9" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Naihm and Gary</h5>
+            <h5>Niahm and Gary</h5>
             <p>WinterLizard live supporting Shining - Dec 2013</p>
           </div>
         </div>
@@ -96,11 +98,13 @@
   </div>
 
 <!-- SUBSCRIPTION FORM -->  
-  <p id="email-alert" class="d-flex justify-content-center"></p>
+  <h2 class="text-center">SUBSCRIBE TO OUR NEWSLETTER</h2>
+
+  <p id="email-alert" class="d-flex justify-content-center zindex-popover"></p>
   <form class="d-flex justify-content-center flex-wrap" id="subcription">
     <div class="form-group d-flex flex-row">      
       <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email address">
-      <button type="button" class="btn btn-dark" id="email-button">Submit</button>
+      <button type="button" class="btn btn-secondary btn-dark" id="email-button">Submit</button>
     </div>
   </form>
   <small id="emailHelp" class="form-text text-muted d-flex justify-content-center mb-3 mt-0"> We'll never share your email with anyone else. </small> 
