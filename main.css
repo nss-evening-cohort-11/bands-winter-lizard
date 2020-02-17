@@ -38,6 +38,22 @@ body {
   padding: 5px;
 }
 
+/* NEWS CARDS */
+#newsInfoCards {
+  background-color: #8FDC97;
+  margin: 25px;
+}
+
+#newsImg {
+  width: 30%;
+  height: 28%;
+  margin-right: 25px;
+}
+
+#newsHead {
+  margin-top: 50px;
+}
+
 /* SUBSCRIPTION FORM */
 form#subcription {
     height: 42px;
@@ -55,54 +71,16 @@ form#subcription {
   color:rgb(139, 204, 41);
 }
 
-
-/* ALBUMS */
-.album-art {
-  width: 200px;
-  height: 200px;
-}
-
-.green-bg {
-  background-color: #8FDC97;
-}
-
-/* NEWS CARDS */
-#newsInfoCards {
-  background-color: #8FDC97;
-  margin: 25px;
-}
-
-#newsImg {
-  width: 30%;
-  height: 28%;
-  margin-right: 25px;
-}
-
-#newsHead {
-  margin-top: 50px;
+#email-alert {
+  height:20px; 
+  width:100%; 
+  clear:both;
 }
 
 /* MEMBER BIOS CARDS */
 .bio-container {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
-
-/* TOUR CARDS */
-#tourLocation {
-  background-color: #8FDC97;
-  color: black;
-}
-
-.tour-card {
-  text-align: center;
-  align-content: center;
-  justify-content: center;
-}
-
-.tour-card-header {
-  background-color: darkgray;
-}
-
 
 /* MERCH CART */
 #cart-container {
@@ -136,4 +114,30 @@ form#subcription {
 
 #all {
   width: 250px;
+}
+
+/* ALBUMS */
+.album-art {
+  width: 200px;
+  height: 200px;
+}
+
+.green-bg {
+  background-color: #8FDC97;
+}
+
+/* TOUR CARDS */
+#tourLocation {
+  background-color: #8FDC97;
+  color: black;
+}
+
+.tour-card {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.tour-card-header {
+  background-color: darkgray;
 }
