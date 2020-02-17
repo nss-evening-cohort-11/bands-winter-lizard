@@ -30,7 +30,8 @@ body {
 }
 
 #myCarousel {
-  width: 75%;
+  min-width: 300px;
+  max-width: 850px;
 }
 
 .carousel-caption {
