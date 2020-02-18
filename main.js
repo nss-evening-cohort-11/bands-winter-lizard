@@ -208,7 +208,11 @@ const makeNewsCards = () => {
 };
 
 // SUBSCRIPTION FORM FUNCTION
-const emailConfirm = () => {
+const emailConfirm = (e) => {
+    if(e.keyCode == 13) {
+        e.preventDefault();
+        return false;
+      }
     let alertText = '';
     const textInput = document.getElementById('exampleInputEmail1')
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
@@ -219,6 +223,14 @@ const emailConfirm = () => {
     }
 document.getElementById("email-alert").innerHTML = alertText;
 };
+
+// INPUT PREVENT ENTER
+const preventEnter = (e) => {
+    if(e.keyCode == 13) {
+        e.preventDefault();
+        return false;
+      }
+}
 
 // MAKE MEMBER BIO CARDS
 const makeBioCards = () => {
@@ -427,6 +439,7 @@ const init = () => {
     switch (window.location.href) {
         case 'http://localhost:8080/index.html':
             makeNewsCards();
+            document.getElementById('exampleInputEmail1').addEventListener('keypress', preventEnter );
             document.getElementById('email-button').addEventListener('click', emailConfirm );
             break; 
         case 'http://localhost:8080/members.html':
